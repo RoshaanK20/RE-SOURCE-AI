@@ -91,14 +91,14 @@ Read `docs/TEACHER_DEFENSE.md` and `docs/OFFICIAL_EVIDENCE.md`. The release carr
 
 | Name | Role | Affiliation |
 |---|---|---|
-| [Roshaan Ahmed Khan] | [Lead developer / Researcher] | [Department Of Artificial Intelligence, Sindh Madressatul Islam University, Karachi, Pakistan] |
-| [Safa] | [Developer / Researcher] | [Department Of Artificial Intelligence, Sindh Madressatul Islam University, Karachi, Pakistan] |
+| Roshaan Ahmed Khan | Lead developer / Researcher | [Department Of Artificial Intelligence, Sindh Madressatul Islam University, Karachi, Pakistan |
+| Safa | Developer / Researcher | Department Of Artificial Intelligence, Sindh Madressatul Islam University, Karachi, Pakistan |
 
+**Contact:** roshaanahmed2005@gmail.com
+**Contact:** safakhan.tech@gmail.com
 
-**Contact:** [roshaanahmed2005@gmail.com]
-**Contact:** [safakhan.tech@gmail.com]
 ## Citation
 
 If you use this work, please cite:
 
-> [Roshaan Ahmed Khan], [Safa]. *RE:SOURCE AI: An Agent for Recovering and Verifying Machine Learning Experiments.* [Sindh Madressatul Islam University], 2026.
+> Roshaan Ahmed Khan, Safa. *RE:SOURCE AI: An Agent for Recovering and Verifying Machine Learning Experiments.* Sindh Madressatul Islam University, 2026.
