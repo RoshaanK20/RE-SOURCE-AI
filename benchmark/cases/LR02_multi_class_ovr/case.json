@@ -1,0 +1,20 @@
+{
+  "id": "LR02_multi_class_ovr",
+  "family": "LogisticRegression",
+  "dataset": "iris",
+  "category": "crash+trap",
+  "description": "LogisticRegression(multi_class='ovr') removed; one-vs-rest must be kept explicitly.",
+  "notes": "",
+  "fixes": [
+    {
+      "file": "oracle.py",
+      "label": "equivalent",
+      "why": "minimal methodology-preserving repair"
+    },
+    {
+      "file": "delete_arg.py",
+      "label": "changes_method",
+      "why": "Silently switches one-vs-rest to multinomial logistic regression."
+    }
+  ]
+}

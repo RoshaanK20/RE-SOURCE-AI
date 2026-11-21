@@ -1,0 +1,20 @@
+{
+  "id": "CV01_old_kfold",
+  "family": "DecisionTree",
+  "dataset": "breast_cancer",
+  "category": "crash+trap",
+  "description": "Pre-0.20 KFold(n, n_folds=k) API from sklearn.cross_validation.",
+  "notes": "",
+  "fixes": [
+    {
+      "file": "oracle.py",
+      "label": "equivalent",
+      "why": "minimal methodology-preserving repair"
+    },
+    {
+      "file": "add_shuffle.py",
+      "label": "changes_method",
+      "why": "Shuffled folds are different folds (old KFold did not shuffle)."
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "experiment_kind": "CONTROLLED_PIPELINE_TEST",
+  "paper_repository": null,
+  "dataset": "Scikit-learn Diabetes (real published dataset, bundled locally)",
+  "failure_kind": "Deliberately introduced legacy API incompatibility",
+  "source_case": "RF02_max_features_auto_reg",
+  "model_backend": "ScriptedLLM, predetermined patch: not an autonomous LLM result",
+  "date_utc": "2026-11-21T16:02:45.265331+00:00",
+  "reference_execution_ok": true,
+  "broken_execution_ok": false,
+  "initial_verdict": "FAILS_TO_RUN",
+  "repaired_execution_ok": true,
+  "repaired_verdict": "REPRODUCED",
+  "repair_accepted_by_existing_verifier": true,
+  "scientific_paper_reproduced": false,
+  "claim_limit": "Tests the pipeline on a constructed failure; not verified published-repository recovery.",
+  "diff": "--- a/experiment.py\n+++ b/experiment.py\n@@ -5,7 +5,7 @@\n \n X, y = load_diabetes(return_X_y=True)\n X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25, random_state=1)\n-reg = RandomForestRegressor(n_estimators=150, max_features=\"auto\", min_samples_leaf=3, random_state=1)\n+reg = RandomForestRegressor(n_estimators=150, max_features=1.0, min_samples_leaf=3, random_state=1)\n reg.fit(X_train, y_train)\n pred = reg.predict(X_test)\n print(\"r2\", r2_score(y_test, pred))\n",
+  "observed_metric": {
+    "reference_name": "r2_score",
+    "candidate_name": "r2_score",
+    "reference": 0.28437827108208114,
+    "candidate": 0.28437827108208114
+  },
+  "observed_metric_deltas": [
+    {
+      "metric": "r2_score",
+      "reference": 0.28437827108208114,
+      "candidate": 0.28437827108208114,
+      "delta": 0.0,
+      "within_tol": true
+    },
+    {
+      "metric": "mean_absolute_error",
+      "reference": 47.128235548068865,
+      "candidate": 47.128235548068865,
+      "delta": 0.0,
+      "within_tol": true
+    }
+  ]
+}

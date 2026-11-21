@@ -1,0 +1,28 @@
+RE:SOURCE AI — OFFICIAL RESEARCH DEMONSTRATION
+
+1. Extract the ZIP and open the RE_SOURCE_AI folder in VS Code.
+2. In PowerShell, run:
+
+   python -m venv .venv
+   .\.venv\Scripts\python.exe -m pip install -r requirements.txt
+   .\.venv\Scripts\python.exe -m streamlit run app.py
+
+3. Open the Streamlit page (normally http://localhost:8501).
+4. Open Reports & About for measured validation; Controlled Recovery for
+   the scripted Diabetes demo or a real (optional) Qwen attempt.
+5. Open Research Queue to inspect paper code; unknown repositories must NOT be
+   executed on Windows without a suitable isolated environment.
+
+To test Ollama/Qwen, after installing and running Ollama:
+   ollama list
+   .\.venv\Scripts\python.exe -m scripts.check_llm --model qwen2.5-coder:7b --smoke
+
+To generate actual evidence in your VS Code environment:
+   .\.venv\Scripts\python.exe -m scripts.verify_release --full-suite
+
+IMPORTANT: The first GCN trial failed because TensorFlow was not installed.
+This is an environment failure, NOT a scientifically reproduced paper.
+The invalid Qwen proposal should be rejected, not executed. The research
+trial now blocks such dangerous whole-file replacements.
+
+For your teacher, read docs/TEACHER_DEFENSE.md.

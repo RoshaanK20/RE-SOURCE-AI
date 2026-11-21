@@ -1,0 +1,19 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+*.joblib
+results/dryrun*
+_repair_*/
+
+# Streamlit research console local outputs
+runs/
+.venv/
+.streamlit/secrets.toml
+*.log
+
+# Keep small reference model artifacts required by the reproducibility benchmark
+!benchmark/cases/**/reference/*.joblib
+research_env/
+.env
+.env.*
+.ipynb_checkpoints/

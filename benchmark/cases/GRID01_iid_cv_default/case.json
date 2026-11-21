@@ -1,0 +1,20 @@
+{
+  "id": "GRID01_iid_cv_default",
+  "family": "SVM+GridSearch",
+  "dataset": "wine",
+  "category": "crash+silent_drift",
+  "description": "GridSearchCV(iid=) removed (crash) AND default cv changed from 3 to 5 folds (silent).",
+  "notes": "",
+  "fixes": [
+    {
+      "file": "oracle.py",
+      "label": "equivalent",
+      "why": "minimal methodology-preserving repair"
+    },
+    {
+      "file": "delete_iid_only.py",
+      "label": "changes_method",
+      "why": "Runs, but hyper-parameters are now selected with 5-fold instead of 3-fold CV."
+    }
+  ]
+}

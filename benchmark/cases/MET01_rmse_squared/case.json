@@ -1,0 +1,25 @@
+{
+  "id": "MET01_rmse_squared",
+  "family": "Ridge",
+  "dataset": "diabetes",
+  "category": "crash+trap",
+  "description": "mean_squared_error(squared=False) removed in scikit-learn 1.6.",
+  "notes": "",
+  "fixes": [
+    {
+      "file": "oracle.py",
+      "label": "equivalent",
+      "why": "minimal methodology-preserving repair"
+    },
+    {
+      "file": "delete_squared.py",
+      "label": "changes_method",
+      "why": "Reports MSE under the RMSE label."
+    },
+    {
+      "file": "sqrt_of_mse.py",
+      "label": "equivalent",
+      "why": "sqrt(MSE) is exactly RMSE (the square root happens outside scikit-learn)."
+    }
+  ]
+}

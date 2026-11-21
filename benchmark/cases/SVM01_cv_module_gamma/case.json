@@ -1,0 +1,20 @@
+{
+  "id": "SVM01_cv_module_gamma",
+  "family": "SVM",
+  "dataset": "breast_cancer",
+  "category": "crash+silent_drift",
+  "description": "sklearn.cross_validation removed (crash) AND SVC's default gamma changed from 'auto' to 'scale' (silent).",
+  "notes": "",
+  "fixes": [
+    {
+      "file": "oracle.py",
+      "label": "equivalent",
+      "why": "minimal methodology-preserving repair"
+    },
+    {
+      "file": "fix_import_only.py",
+      "label": "changes_method",
+      "why": "Runs, but gamma='scale' is a different kernel width."
+    }
+  ]
+}

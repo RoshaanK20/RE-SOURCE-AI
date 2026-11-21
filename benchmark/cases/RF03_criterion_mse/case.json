@@ -1,0 +1,25 @@
+{
+  "id": "RF03_criterion_mse",
+  "family": "RandomForest",
+  "dataset": "diabetes",
+  "category": "crash",
+  "description": "criterion='mse' renamed to 'squared_error' (scikit-learn 1.2).",
+  "notes": "",
+  "fixes": [
+    {
+      "file": "oracle.py",
+      "label": "equivalent",
+      "why": "minimal methodology-preserving repair"
+    },
+    {
+      "file": "delete_arg.py",
+      "label": "equivalent",
+      "why": "Default criterion is squared_error."
+    },
+    {
+      "file": "absolute_error.py",
+      "label": "changes_method",
+      "why": "A different split criterion (loss)."
+    }
+  ]
+}

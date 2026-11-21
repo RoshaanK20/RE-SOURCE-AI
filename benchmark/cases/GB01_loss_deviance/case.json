@@ -1,0 +1,25 @@
+{
+  "id": "GB01_loss_deviance",
+  "family": "GradientBoosting",
+  "dataset": "breast_cancer",
+  "category": "crash",
+  "description": "GradientBoosting loss='deviance' renamed to 'log_loss'.",
+  "notes": "",
+  "fixes": [
+    {
+      "file": "oracle.py",
+      "label": "equivalent",
+      "why": "minimal methodology-preserving repair"
+    },
+    {
+      "file": "delete_arg.py",
+      "label": "equivalent",
+      "why": "Default is log_loss."
+    },
+    {
+      "file": "exponential.py",
+      "label": "changes_method",
+      "why": "Exponential (AdaBoost) loss is a different model."
+    }
+  ]
+}

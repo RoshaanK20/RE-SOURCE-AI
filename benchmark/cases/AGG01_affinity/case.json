@@ -1,0 +1,20 @@
+{
+  "id": "AGG01_affinity",
+  "family": "Agglomerative",
+  "dataset": "blobs",
+  "category": "crash+trap",
+  "description": "AgglomerativeClustering(affinity=) renamed to metric=.",
+  "notes": "",
+  "fixes": [
+    {
+      "file": "oracle.py",
+      "label": "equivalent",
+      "why": "minimal methodology-preserving repair"
+    },
+    {
+      "file": "delete_arg.py",
+      "label": "changes_method",
+      "why": "Default metric is euclidean, not manhattan."
+    }
+  ]
+}

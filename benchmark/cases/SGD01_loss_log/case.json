@@ -1,0 +1,20 @@
+{
+  "id": "SGD01_loss_log",
+  "family": "SGD",
+  "dataset": "digits",
+  "category": "crash+trap",
+  "description": "SGDClassifier(loss='log') renamed to 'log_loss'.",
+  "notes": "",
+  "fixes": [
+    {
+      "file": "oracle.py",
+      "label": "equivalent",
+      "why": "minimal methodology-preserving repair"
+    },
+    {
+      "file": "delete_arg.py",
+      "label": "changes_method",
+      "why": "Default loss is 'hinge': a linear SVM instead of logistic regression."
+    }
+  ]
+}

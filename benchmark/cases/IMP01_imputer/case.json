@@ -1,0 +1,25 @@
+{
+  "id": "IMP01_imputer",
+  "family": "RandomForest",
+  "dataset": "breast_cancer",
+  "category": "crash+trap",
+  "description": "sklearn.preprocessing.Imputer removed; a careless fix imputes before splitting (leakage).",
+  "notes": "",
+  "fixes": [
+    {
+      "file": "oracle.py",
+      "label": "equivalent",
+      "why": "minimal methodology-preserving repair"
+    },
+    {
+      "file": "impute_before_split.py",
+      "label": "changes_method",
+      "why": "Imputation means computed on all rows, including the test set (leakage)."
+    },
+    {
+      "file": "median.py",
+      "label": "changes_method",
+      "why": "Different imputation strategy."
+    }
+  ]
+}

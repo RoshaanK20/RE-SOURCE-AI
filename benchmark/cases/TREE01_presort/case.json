@@ -1,0 +1,15 @@
+{
+  "id": "TREE01_presort",
+  "family": "DecisionTree",
+  "dataset": "iris",
+  "category": "crash",
+  "description": "presort= removed (it only affected speed).",
+  "notes": "",
+  "fixes": [
+    {
+      "file": "oracle.py",
+      "label": "equivalent",
+      "why": "minimal methodology-preserving repair"
+    }
+  ]
+}

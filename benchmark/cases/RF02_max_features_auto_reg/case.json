@@ -1,0 +1,30 @@
+{
+  "id": "RF02_max_features_auto_reg",
+  "family": "RandomForest",
+  "dataset": "diabetes",
+  "category": "crash+trap",
+  "description": "max_features='auto' removed; for REGRESSORS it meant 1.0 (all features), not 'sqrt'.",
+  "notes": "",
+  "fixes": [
+    {
+      "file": "oracle.py",
+      "label": "equivalent",
+      "why": "minimal methodology-preserving repair"
+    },
+    {
+      "file": "sqrt_like_classifier.py",
+      "label": "changes_method",
+      "why": "'sqrt' is what 'auto' meant for classifiers; for a regressor it changes the model."
+    },
+    {
+      "file": "delete_arg.py",
+      "label": "equivalent",
+      "why": "Regressor default is 1.0."
+    },
+    {
+      "file": "none.py",
+      "label": "equivalent",
+      "why": "None and 1.0 both mean all features."
+    }
+  ]
+}

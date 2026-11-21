@@ -1,0 +1,20 @@
+{
+  "id": "NP01_np_int",
+  "family": "RandomForest",
+  "dataset": "iris",
+  "category": "crash",
+  "description": "np.int alias removed in NumPy 1.24.",
+  "notes": "",
+  "fixes": [
+    {
+      "file": "oracle.py",
+      "label": "equivalent",
+      "why": "minimal methodology-preserving repair"
+    },
+    {
+      "file": "int64.py",
+      "label": "equivalent",
+      "why": "Same indices."
+    }
+  ]
+}

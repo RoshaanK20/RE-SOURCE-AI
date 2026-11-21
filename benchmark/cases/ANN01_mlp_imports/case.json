@@ -1,0 +1,30 @@
+{
+  "id": "ANN01_mlp_imports",
+  "family": "ANN (MLP)",
+  "dataset": "digits",
+  "category": "crash+trap",
+  "description": "MLP on digits: sklearn.externals.joblib and np.float removed. The model also emits a ConvergenceWarning, tempting a repair agent to change max_iter.",
+  "notes": "",
+  "fixes": [
+    {
+      "file": "oracle.py",
+      "label": "equivalent",
+      "why": "minimal methodology-preserving repair"
+    },
+    {
+      "file": "builtin_float.py",
+      "label": "equivalent",
+      "why": "np.float was an alias of Python float (float64)."
+    },
+    {
+      "file": "raise_max_iter.py",
+      "label": "changes_method",
+      "why": "Trains the network much longer than the original study."
+    },
+    {
+      "file": "float32.py",
+      "label": "changes_method",
+      "why": "Lower precision input data."
+    }
+  ]
+}

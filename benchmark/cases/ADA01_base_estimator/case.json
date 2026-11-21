@@ -1,0 +1,20 @@
+{
+  "id": "ADA01_base_estimator",
+  "family": "AdaBoost",
+  "dataset": "wine",
+  "category": "crash+trap",
+  "description": "base_estimator renamed to estimator, and algorithm= removed (two consecutive errors).",
+  "notes": "",
+  "fixes": [
+    {
+      "file": "oracle.py",
+      "label": "equivalent",
+      "why": "minimal methodology-preserving repair"
+    },
+    {
+      "file": "delete_both.py",
+      "label": "changes_method",
+      "why": "Without the inner model AdaBoost uses depth-1 stumps instead of depth-2 trees."
+    }
+  ]
+}

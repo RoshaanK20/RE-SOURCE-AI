@@ -1,0 +1,20 @@
+{
+  "id": "RF04_silent_default_trees",
+  "family": "RandomForest",
+  "dataset": "breast_cancer",
+  "category": "silent_drift",
+  "description": "Code from the scikit-learn 0.19 era relies on the default n_estimators (10 then, 100 now). It runs today without any error but trains a different model.",
+  "notes": "The reference trace stands for the original environment's effective parameters.",
+  "fixes": [
+    {
+      "file": "oracle.py",
+      "label": "equivalent",
+      "why": "minimal methodology-preserving repair"
+    },
+    {
+      "file": "leave_as_is.py",
+      "label": "changes_method",
+      "why": "Runs fine, but trains 100 trees instead of 10."
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+case_id,title,paper_url,repository_url,reported_problem,status,license,commit,verified_failure,methodology_verified
+P01,"*Semi-Supervised Classification with Graph Convolutional Networks* (Kipf & Welling, 2017)",https://arxiv.org/abs/1609.02907,https://github.com/tkipf/gcn,NOT_VERIFIED,CANDIDATE,TO_CHECK,TO_CHECK,NO,NO
+P02,"*Variational Graph Auto-Encoders* (Kipf & Welling, 2016)",https://arxiv.org/abs/1611.07308,https://github.com/tkipf/gae,NOT_VERIFIED,CANDIDATE,TO_CHECK,TO_CHECK,NO,NO
+P03,"*Convolutional Neural Networks for Sentence Classification* (Yoon Kim, 2014)",https://arxiv.org/abs/1408.5882,https://github.com/yoonkim/CNN_sentence,NOT_VERIFIED,CANDIDATE,TO_CHECK,TO_CHECK,NO,NO
+P04,"*Supervised Learning of Universal Sentence Representations from Natural Language Inference Data* (Conneau et al., 2017)",https://arxiv.org/abs/1705.02364,https://github.com/facebookresearch/InferSent,NOT_VERIFIED,CANDIDATE,TO_CHECK,TO_CHECK,NO,NO
+P05,"*Neural Collaborative Filtering* (He et al., 2017)",https://arxiv.org/abs/1708.05031,https://github.com/hexiangnan/neural_collaborative_filtering,NOT_VERIFIED,CANDIDATE,TO_CHECK,TO_CHECK,NO,NO

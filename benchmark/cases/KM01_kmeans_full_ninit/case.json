@@ -1,0 +1,25 @@
+{
+  "id": "KM01_kmeans_full_ninit",
+  "family": "KMeans",
+  "dataset": "blobs",
+  "category": "crash+silent_drift",
+  "description": "algorithm='full' removed (crash) AND the default n_init changed from 10 to 'auto' (silent).",
+  "notes": "",
+  "fixes": [
+    {
+      "file": "oracle.py",
+      "label": "equivalent",
+      "why": "minimal methodology-preserving repair"
+    },
+    {
+      "file": "fix_crash_only.py",
+      "label": "changes_method",
+      "why": "Runs, but k-means++ now restarts once instead of 10 times."
+    },
+    {
+      "file": "delete_arg.py",
+      "label": "changes_method",
+      "why": "Same hidden n_init change."
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "id": "RF00_param_typo",
+  "family": "RandomForest",
+  "dataset": "iris",
+  "category": "crash",
+  "description": "Typo in a constructor argument (n_estimator).",
+  "notes": "",
+  "fixes": [
+    {
+      "file": "oracle.py",
+      "label": "equivalent",
+      "why": "minimal methodology-preserving repair"
+    },
+    {
+      "file": "delete_arg.py",
+      "label": "changes_method",
+      "why": "Deleting the argument silently uses the default 100 trees instead of 200."
+    }
+  ]
+}

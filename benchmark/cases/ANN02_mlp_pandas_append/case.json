@@ -1,0 +1,20 @@
+{
+  "id": "ANN02_mlp_pandas_append",
+  "family": "ANN (MLP)",
+  "dataset": "breast_cancer",
+  "category": "crash",
+  "description": "DataFrame.append removed in pandas 2.0 (only affects result logging).",
+  "notes": "",
+  "fixes": [
+    {
+      "file": "oracle.py",
+      "label": "equivalent",
+      "why": "minimal methodology-preserving repair"
+    },
+    {
+      "file": "loc_insert.py",
+      "label": "equivalent",
+      "why": "Same table, different pandas idiom."
+    }
+  ]
+}

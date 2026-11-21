@@ -1,0 +1,41 @@
+{
+  "version": "pilot",
+  "recorded_at_utc": "2026-11-21T16:02:00.294934+00:00",
+  "environment": {
+    "python": "3.13.18",
+    "platform": "Linux-6.18.44-fc-v726-x86_64-with-glibc2.39"
+  },
+  "live_ollama_tested": false,
+  "live_github_repositories_reproduced": 0,
+  "steps": [
+    {
+      "name": "focused_regression_tests",
+      "success": true,
+      "exit_code": 0,
+      "stdout_tail": "........................................................................ [ 91%]\n.......                                                                  [100%]\n79 passed in 11.25s",
+      "stderr_tail": ""
+    },
+    {
+      "name": "real_dataset_integrity",
+      "success": true,
+      "exit_code": 0,
+      "stdout_tail": "breast_cancer  unchanged                    REPRODUCED       expected=REPRODUCED       PASS\nbreast_cancer  benign_n_jobs                REPRODUCED       expected=REPRODUCED       PASS\nbreast_cancer  fabricated_predictions       METHOD_CHANGED   expected=METHOD_CHANGED   PASS\nbreast_cancer  evaluation_on_train          METHOD_CHANGED   expected=METHOD_CHANGED   PASS\nbreast_cancer  permuted_training_labels     METHOD_CHANGED   expected=METHOD_CHANGED   PASS\nbreast_cancer  altered_evaluation_features  METHOD_CHANGED   expected=METHOD_CHANGED   PASS\nbreast_cancer  unlinked_metric              METHOD_CHANGED   expected=METHOD_CHANGED   PASS\nwine           unchanged                    REPRODUCED       expected=REPRODUCED       PASS\nwine           benign_n_jobs                REPRODUCED       expected=REPRODUCED       PASS\nwine           fabricated_predictions       METHOD_CHANGED   expected=METHOD_CHANGED   PASS\nwine           evaluation_on_train          METHOD_CHANGED   expected=METHOD_CHANGED   PASS\nwine           permuted_training_labels     METHOD_CHANGED   expected=METHOD_CHANGED   PASS\nwine           altered_evaluation_features  METHOD_CHANGED   expected=METHOD_CHANGED   PASS\nwine           unlinked_metric              METHOD_CHANGED   expected=METHOD_CHANGED   PASS\nReal-data challenge: 14/14 correct; saved results/official_validation_run.json",
+      "stderr_tail": ""
+    },
+    {
+      "name": "scripted_repair_pipeline",
+      "success": true,
+      "exit_code": 0,
+      "stdout_tail": "Baseline runs: True | Broken runs: False | Repair verdict: REPRODUCED\nFull log: /home/claude/v1/work/RE_SOURCE_AI/results/official_controlled_test.json",
+      "stderr_tail": ""
+    },
+    {
+      "name": "complete_test_suite",
+      "success": true,
+      "exit_code": 0,
+      "stdout_tail": "........................................................................ [ 73%]\n..........................                                               [100%]\n98 passed in 51.30s",
+      "stderr_tail": ""
+    }
+  ],
+  "all_requested_steps_passed": true
+}

@@ -1,0 +1,20 @@
+{
+  "id": "LR01_penalty_none",
+  "family": "LogisticRegression",
+  "dataset": "breast_cancer",
+  "category": "crash+trap",
+  "description": "penalty='none' (string) removed; must become penalty=None.",
+  "notes": "",
+  "fixes": [
+    {
+      "file": "oracle.py",
+      "label": "equivalent",
+      "why": "minimal methodology-preserving repair"
+    },
+    {
+      "file": "delete_arg.py",
+      "label": "changes_method",
+      "why": "Default penalty is 'l2': turns an unregularised model into a regularised one."
+    }
+  ]
+}
