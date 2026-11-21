@@ -85,3 +85,20 @@ Read `docs/TEACHER_DEFENSE.md` and `docs/OFFICIAL_EVIDENCE.md`. The release carr
 - **Do not claim universal PyTorch, TensorFlow, or JAX scientific validation** based on mocked or source-contract unit tests.
 
 **Research question:** Can an autonomous compatibility-repair agent distinguish a valid restoration of the original experiment from a repair that merely makes code execute?
+
+
+## Authors
+
+| Name | Role | Affiliation |
+|---|---|---|
+| [Roshaan Ahmed Khan] | [Lead developer / Researcher] | [Department Of Artificial Intelligence, Sindh Madressatul Islam University, Karachi, Pakistan] |
+| [Safa] | [Developer / Researcher] | [Department Of Artificial Intelligence, Sindh Madressatul Islam University, Karachi, Pakistan] |
+
+
+**Contact:** [roshaanahmed2005@gmail.com]
+**Contact:** [safakhan.tech@gmail.com]
+## Citation
+
+If you use this work, please cite:
+
+> [Roshaan Ahmed Khan], [Safa]. *RE:SOURCE AI: An Agent for Recovering and Verifying Machine Learning Experiments.* [Sindh Madressatul Islam University], 2026.
