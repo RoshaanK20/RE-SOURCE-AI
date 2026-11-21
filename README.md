@@ -66,16 +66,6 @@ The release now blocks both failure modes: missing top-level ML packages are rep
 
 The verdict `PASSED_SPECIFIED_SCIENTIFIC_CHECKS` means **only the supplied evidence contract checks passed**. When the paper's reference methodology, original data, approved changes, or independent evaluation are missing, the outcome must be `UNVERIFIABLE` rather than `REPRODUCED`. For setup details, see `docs/FRAMEWORK_INDEPENDENT_SCIENCE.md`. **Do not use the Scientific Integrity Gate before the original execution and paper methodology contract are prepared.**
 
-## 6. For your teacher / GitHub
-
-1. Show the **live app** and scan the GCN link (inspection, not reproduction).
-2. Show **Reports** with the real-dataset verifier results.
-3. Show the **Controlled Recovery** scripted case, explicitly labeled scripted.
-4. Run a real Qwen bundled case and save the model response, patch and verdict. If it fails, report the failure.
-5. Explain the user-observed GCN environment blocker and why the destructive patch is rejected.
-
-Read `docs/TEACHER_DEFENSE.md` and `docs/OFFICIAL_EVIDENCE.md`. The release carries the complete implementation, tests, 21 constructed benchmark cases, and source links. It intentionally excludes downloaded third-party repositories, Python environments, and potentially sensitive runtime logs from the public ZIP.
-
 ### Known limits
 
 - A successful script execution is not proof of scientific reproduction.
