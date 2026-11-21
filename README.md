@@ -81,7 +81,7 @@ The verdict `PASSED_SPECIFIED_SCIENTIFIC_CHECKS` means **only the supplied evide
 
 | Name | Role | Affiliation |
 |---|---|---|
-| Roshaan Ahmed Khan | Lead developer / Researcher | [Department Of Artificial Intelligence, Sindh Madressatul Islam University, Karachi, Pakistan |
+| Roshaan Ahmed Khan | Lead developer / Researcher | Department Of Artificial Intelligence, Sindh Madressatul Islam University, Karachi, Pakistan |
 | Safa | Developer / Researcher | Department Of Artificial Intelligence, Sindh Madressatul Islam University, Karachi, Pakistan |
 
 **Contact:** roshaanahmed2005@gmail.com
