@@ -124,7 +124,7 @@ The verdict `PASSED_SPECIFIED_SCIENTIFIC_CHECKS` means **only the supplied evide
 
 If you use this work, please cite:
 
-> S. M. H. Zaidi, R. A. Khan, and Safa, "RE-SOURCE AI: An Autonomous Agent for Recovering and Verifying Machine Learning Experiments," in *Proc. 5th Int. Conf. Computing and Related Technologies (ICCRT)*, Karachi, Pakistan, 2026.
+> Syed Muhammad Hassan Zaidi, Roshaan Ahmed Khan, and Safa, "RE-SOURCE AI: An Autonomous Agent for Recovering and Verifying Machine Learning Experiments," in *Proc. 5th Int. Conf. Computing and Related Technologies (ICCRT)*, Karachi, Pakistan, 2026.
 
 ## License
 
