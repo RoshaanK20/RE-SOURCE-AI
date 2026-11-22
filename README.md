@@ -18,7 +18,7 @@ python -m venv .venv
 .\.venv\Scripts\python.exe -m streamlit run app.py
 ```
 
-The dashboard normally opens at `http://localhost:8501`. Run Streamlit with the **app** virtual environment, not the separate `research_env`.
+The dashboard normally opens at `http://localhost:8501`. Always start Streamlit with this app environment (`.venv`). A second, separate environment called `research_env` is only needed when the **Research Trial** screen runs trusted research code on your own computer; `docs/FRAMEWORK_INDEPENDENT_SCIENCE.md` explains how to create it.
 
 To check real Qwen connectivity (with Ollama installed and running):
 
@@ -56,7 +56,7 @@ This runs Python regression tests, scientific-integrity challenges on the **Brea
 
 These experiments use **real datasets but deliberately constructed errors**. The scripted Diabetes correction is **not** Qwen-generated. Source-trace checks operate on selected Scikit-learn tasks and do **not** generalize automatically to any framework.
 
-## Paper results
+## 4. Paper results
 
 Everything needed to check the numbers in the paper is in this repository:
 
@@ -87,13 +87,13 @@ Repeat the experiment on the 51 labelled fixes:
 .\.venv\Scripts\python.exe experiments\evaluate_verifier.py
 ```
 
-## 4. Real research repository: observed GCN trial
+## 5. Real research repository: observed GCN trial
 
 The public research-code candidate **Graph Convolutional Networks** is linked at https://github.com/tkipf/gcn. A user-observed local trial found `gcn/train.py` and produced `ModuleNotFoundError: No module named 'tensorflow'`. This demonstrates an **environment dependency failure**, not a confirmed bug in the original paper. Qwen later proposed a malformed, destructive replacement containing patch markers; that proposal **must be rejected**, and the candidate was not shown to reproduce the paper.
 
 The release now blocks both failure modes: missing top-level ML packages are reported as **ENVIRONMENT_BLOCKED** (no code rewrite is requested), and malformed/large whole-file replacements are rejected in the research-trial repair path. See `docs/OBSERVED_GCN_TRIAL.md` for the exact evidence and limits. This recorded observation was supplied from a Windows trial; we have **not** independently reproduced GCN here.
 
-## 5. Framework-neutral scientific integrity
+## 6. Framework-neutral scientific integrity
 
 `resource_ai/science.py` verifies a **researcher-approved paper methodology contract**, protected dataset/configuration hashes, explicitly approved source edits, and measurements from a **separate, pinned evaluator**. It can inspect Python source from various frameworks, but it does **not** automatically infer a published paper's methodology or establish scientific equivalence from a GitHub URL alone.
 

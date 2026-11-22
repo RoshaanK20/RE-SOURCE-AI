@@ -26,7 +26,7 @@
       "name": "scripted_repair_pipeline",
       "success": true,
       "exit_code": 0,
-      "stdout_tail": "Baseline runs: True | Broken runs: False | Repair verdict: REPRODUCED\nFull log: /home/claude/v1/work/RE_SOURCE_AI/results/official_controlled_test.json",
+      "stdout_tail": "Baseline runs: True | Broken runs: False | Repair verdict: REPRODUCED\nFull log: results/official_controlled_test.json",
       "stderr_tail": ""
     },
     {

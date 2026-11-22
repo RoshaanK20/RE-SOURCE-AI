@@ -1,3 +1,12 @@
+# Changelog
+
+## v0.4.0: paper release (ICCRT-2026)
+
+- Added the evidence behind the paper: logs of all 420 repair runs, the manual patch audit, the 51-fix verifier experiment and the real-data check, under `results/`.
+- Added `experiments/paper_results.py` (rebuilds the paper's tables and Fig. 2 from the logs) and `experiments/reverify_runs.py` (re-judges all logged patches with the current verifier).
+- Added an MIT `LICENSE`, a `.gitattributes` file for consistent line endings, and author, citation and paper-results sections in the README.
+- Renamed the project to RE-SOURCE AI throughout and replaced the earlier demonstration notes with `docs/DEMO_GUIDE.md`.
+
 ## v0.4.0-rc3 — Docker optional for trusted research trials
 
 - Added a dedicated local-virtual-environment execution backend to the Streamlit Research Trial. Docker remains available and the default backend in the Python API.
@@ -5,8 +14,6 @@
 - Preserved Qwen patching and execution records across both backends; execution remains `EXECUTES_UNVERIFIED` without independent science checks.
 - Added local independent-evaluator support requiring a paper-specific contract, pinned evaluator hash and approved `local_environment_sha256` (version-manifest fingerprint). Missing locks cannot pass.
 - Added actual temporary-venv integration tests; no claim of live Qwen, live GitHub execution or real published-paper recovery.
-
-# Changelog
 
 ## 0.3.0-alpha | Research Recovery Console
 
@@ -18,8 +25,6 @@
 - The new interface is an alpha release. Real historical-repository reproduction and independent scientific certification remain unverified.
 
 ---
-
-# Changelog
 
 ## 0.2.2-alpha (experimental development snapshot)
 
@@ -35,7 +40,7 @@
 ## Previous development (historical milestones)
 
 - Learning Tasks 1-3: an Iris Random Forest reference, a deliberately broken script, and a rule-based diagnosis notebook.
-- Earlier modular prototype, developed with feedback from Claude: reference/recorder, subprocess execution, scientific verifier, patching and repair-agent loop.
+- Earlier modular prototype: reference/recorder, subprocess execution, scientific verifier, patching and repair-agent loop.
 - Later alpha baseline: a local-model repair interface and 21 deliberately constructed benchmark cases.
 
 > Version tags describe repository development, not research-paper results. Earlier uploaded notebooks are retained in development backups; they are excluded from the lean public release ZIP and are not independent scientific validations.
@@ -43,7 +48,7 @@
 ## v0.2.2-alpha: official pilot intake extension
 
 - Added URL/file intake with research provenance report and static code inventory.
-- Added Colab teacher demonstration: paste code link and generate `CASE_REPORT.md`/`case.json`.
+- Added Colab supervisor demonstration: paste code link and generate `CASE_REPORT.md`/`case.json`.
 - Added deterministic controlled repair demonstration using real Scikit-learn Diabetes data.
 - Added candidate-paper queue and source safety tests.
 - Kept downloaded public repository execution disabled pending isolated runner and trusted evaluation.
@@ -64,7 +69,7 @@
 - Added live activity feedback and downloadable model-run evidence (source SHA-256, model, environment, agent attempts and failures).
 - Added a real-dataset validation table and chart backed by measured JSON; no fictional results are plotted.
 - Added a one-command evidence runner (`python -m scripts.verify_release`).
-- Added first-public-release teacher demo, published-code screening status and updated scientific limitations.
+- Added first-public-release supervisor demo, published-code screening status and updated scientific limitations.
 - External repository source execution remains disabled; no independently verified published-paper reproduction is claimed.
 
 ## v0.4.0-rc2 — Framework-independent Scientific Integrity Gate
@@ -84,7 +89,7 @@
 - Rejected research-trial whole-file LLM replacements, malformed patch markers, invalid syntax and disproportionately large edits.
 - Allowed the original baseline to be recorded when Ollama is offline, instead of blocking every trial.
 - Added clear Streamlit validation of methodology contract/evaluator paths and explicit failure statuses.
-- Added independent teacher-defense notes and a user-observed GCN failure report; no claimed published-paper reproduction.
+- Added supervisor demonstration notes and a user-observed GCN failure report; no claimed published-paper reproduction.
 - No new model families, frameworks or untested paper recoveries added to the official scientific claims.
 
 ## Review fixes (21 November 2026)
