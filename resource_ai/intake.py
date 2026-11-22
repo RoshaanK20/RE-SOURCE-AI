@@ -261,7 +261,7 @@ def intake_source(source: str, out: str | Path = 'official_pilot',
                             'Enable GitHub download in your own runtime, then inspect the source'),
         }
         (case / 'case.json').write_text(json.dumps(result, indent=2), encoding='utf-8')
-        md = [f'# RE:SOURCE AI | Candidate {slug}', '', f'**Status:** {status}',
+        md = [f'# RE-SOURCE AI | Candidate {slug}', '', f'**Status:** {status}',
               f'**Source:** {source}', f'**Paper:** {paper or "Not yet supplied"}',
               f'**Source commit:** {commit or "Not verified"}',
               '', '## Static inventory',

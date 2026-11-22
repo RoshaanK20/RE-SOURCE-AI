@@ -1,4 +1,4 @@
-# RE:SOURCE AI | Research paper and GitHub link queue
+# RE-SOURCE AI | Research paper and GitHub link queue
 
 Each paper/repository pair will be processed automatically, in order. These five are **candidates**, not confirmed broken experiments. Static source inspection does not execute code or establish reproducibility.
 

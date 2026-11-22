@@ -4,7 +4,7 @@ For every benchmark case we run the reference, the broken code, and every labell
 three acceptance rules whether to accept the fix:
   RUNS     - accept if it executes without error                     (typical "make it run" agent)
   SCORE10  - accept if it runs and the primary score is within 10%   (prior work, e.g. MLEModernizer)
-  VERIFIER - accept only if RE:SOURCE verdict is REPRODUCED          (ours)
+  VERIFIER - accept only if RE-SOURCE verdict is REPRODUCED          (ours)
 Ground truth: fixes labelled "equivalent" should be accepted, "changes_method" rejected.
 
     python experiments/evaluate_verifier.py [--cases benchmark/cases] [--out results/verifier_eval]

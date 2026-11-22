@@ -173,7 +173,7 @@ def scan_research_list(list_path: str | Path, out: str | Path = 'official_pilot/
         wr.writeheader()
         wr.writerows(reports)
 
-    md = ['# RE:SOURCE AI | Batch research repository intake', '',
+    md = ['# RE-SOURCE AI | Batch research repository intake', '',
           f'**Input:** `{source.name}`',
           f'**Entries:** {len(reports)}',
           f'**GitHub fetch requested:** {fetch}',

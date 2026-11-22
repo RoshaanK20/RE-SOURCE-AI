@@ -1,4 +1,4 @@
-"""Build the RE:SOURCE benchmark folders from compact definitions.
+"""Build the RE-SOURCE benchmark folders from compact definitions.
 
 Each case folder gets:
   reference/experiment.py   the original experiment's methodology, runnable today (ground truth)

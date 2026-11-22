@@ -393,7 +393,7 @@ def verify_science(contract_path: str | Path, reference_dir: str | Path, candida
 
 
 def as_markdown(report: dict) -> str:
-    lines = ['# RE:SOURCE AI | Scientific integrity report', '',
+    lines = ['# RE-SOURCE AI | Scientific integrity report', '',
              f"**Paper:** {report['paper']['title']}",
              f"**Framework:** {report['framework']}",
              f"**Verdict:** `{report['verdict']}`", '',

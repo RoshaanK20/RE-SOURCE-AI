@@ -343,7 +343,7 @@ def run_trial(project: str | Path, entry: str, out: str | Path,
                  'methodology and metric check is required.'),
     }
     (dest / 'trial_result.json').write_text(json.dumps(result, indent=2), encoding='utf-8')
-    md = [f'# RE:SOURCE AI | Cross-framework trial', '', f'**Entry point:** `{entry}`',
+    md = [f'# RE-SOURCE AI | Cross-framework trial', '', f'**Entry point:** `{entry}`',
           f'**Execution backend:** `{backend}`',
           f'**Environment:** `{image if backend == "docker" else python_executable}`',
           f'**LLM:** {result["model"] or "Not used"}',

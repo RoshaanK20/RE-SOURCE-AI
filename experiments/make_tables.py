@@ -12,8 +12,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 MODE_ORDER = ["naive", "score", "guarded", "guarded+kb"]
-MODE_LABEL = {"naive": "Run-only", "score": "Score ±10%", "guarded": "RE:SOURCE verifier",
-              "guarded+kb": "RE:SOURCE verifier + KB"}
+MODE_LABEL = {"naive": "Run-only", "score": "Score ±10%", "guarded": "RE-SOURCE verifier",
+              "guarded+kb": "RE-SOURCE verifier + KB"}
 
 
 def load(path: Path) -> list[dict]:
@@ -117,7 +117,7 @@ def figure(csv_rows, path):
     for ax, m in zip(axes[0], models):
         rs = [r for r in csv_rows if r["model"] == m]
         rs.sort(key=lambda r: MODE_ORDER.index(r["mode"]))
-        labels = [MODE_LABEL[r["mode"]].replace(" + ", "\n+ ").replace("RE:SOURCE ", "RE:SOURCE\n") for r in rs]
+        labels = [MODE_LABEL[r["mode"]].replace(" + ", "\n+ ").replace("RE-SOURCE ", "RE-SOURCE\n") for r in rs]
         x = range(len(rs))
         ax.bar([i - 0.2 for i in x], [100 * r["reproduced"] for r in rs], 0.4, label="Verified reproduction", color="#2b7a4b")
         ax.bar([i + 0.2 for i in x], [100 * r["silent_method_change"] for r in rs], 0.4, label="Silent method change", color="#c44e52")

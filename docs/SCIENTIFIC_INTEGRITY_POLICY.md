@@ -1,6 +1,6 @@
 # Scientific integrity policy (experimental)
 
-RE:SOURCE AI distinguishes:
+RE-SOURCE AI distinguishes:
 
 1. **Execution**: the script finished without an exception.
 2. **Observed methodological agreement**: currently supported recorder events agree with a reference trace.

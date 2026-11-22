@@ -1,4 +1,4 @@
-# RE:SOURCE AI | Scientific Integrity Gate
+# RE-SOURCE AI | Scientific Integrity Gate
 
 **Release candidate:** v0.4.0-rc3  
 **Goal:** Assess the scientific integrity of a research-code repair *independently of its ML framework*.

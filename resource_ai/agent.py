@@ -10,8 +10,8 @@ methodology"). They differ only in WHEN a repair is accepted and WHAT feedback t
   score      accept when it runs and the main score is within 10% of the original;
              otherwise tell the LLM the target score  (simplified score-only baseline)
   guarded    accept only when the verifier says REPRODUCED;
-             otherwise tell the LLM exactly which methodology/results differ   (RE:SOURCE)
-  guarded+kb guarded + retrieved breaking-change knowledge in the prompt       (RE:SOURCE full)
+             otherwise tell the LLM exactly which methodology/results differ   (RE-SOURCE)
+  guarded+kb guarded + retrieved breaking-change knowledge in the prompt       (RE-SOURCE full)
 
 Whatever the mode, the final repair is always checked by the full verifier, so we can measure
 how often a mode accepted a repair that silently changed the science.

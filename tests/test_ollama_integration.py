@@ -1,4 +1,4 @@
-"""No network needed: verify exactly how RE:SOURCE talks to Ollama."""
+"""No network needed: verify exactly how RE-SOURCE talks to Ollama."""
 from __future__ import annotations
 
 import json
