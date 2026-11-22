@@ -91,4 +91,4 @@ The verdict `PASSED_SPECIFIED_SCIENTIFIC_CHECKS` means **only the supplied evide
 
 If you use this work, please cite:
 
-> Roshaan Ahmed Khan, Safa. *RE:SOURCE AI: An Agent for Recovering and Verifying Machine Learning Experiments.* Sindh Madressatul Islam University, 2026.
+> Roshaan Ahmed Khan, Safa. *RE-SOURCE AI: An Agent for Recovering and Verifying Machine Learning Experiments.* Sindh Madressatul Islam University, 2026.
