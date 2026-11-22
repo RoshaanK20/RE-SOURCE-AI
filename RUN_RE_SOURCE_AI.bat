@@ -12,7 +12,7 @@ if errorlevel 1 (
   ".venv\Scripts\python.exe" -m pip install -r requirements.txt
   if errorlevel 1 goto :error
 )
-echo Starting RE:SOURCE AI at http://localhost:8501 ...
+echo Starting RE-SOURCE AI at http://localhost:8501 ...
 ".venv\Scripts\python.exe" -m streamlit run app.py
 if errorlevel 1 goto :error
 exit /b 0

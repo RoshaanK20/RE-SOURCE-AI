@@ -120,7 +120,7 @@ def show_case(result: dict):
 
 def single_repo():
     title('01 / Inspect', 'Analyze a research repository',
-          'Paste a GitHub link. RE:SOURCE reads source files and reports possible compatibility issues.')
+          'Paste a GitHub link. RE-SOURCE reads source files and reports possible compatibility issues.')
     with st.form('single_repo'):
         repository_url = st.text_input('GitHub repository or supported source-file link',
                                        placeholder='https://github.com/owner/research-project')
@@ -605,7 +605,7 @@ def validation_evidence():
 
 
 def history():
-    title('04 / Evidence', 'Report history', 'Previous local inspections and runs, kept for teacher review.')
+    title('04 / Evidence', 'Report history', 'Previous local inspections and runs, kept for review.')
     results = recorded_cases(RUNS)
     if results:
         st.dataframe(pd.DataFrame(results), hide_index=True, use_container_width=True)
@@ -636,7 +636,7 @@ The next research milestone is a supervised, isolated recovery trial with a **kn
 
 
 with st.sidebar:
-    st.markdown('### 🧪 RE:SOURCE AI')
+    st.markdown('### 🧪 RE-SOURCE AI')
     st.caption('Research Recovery Console')
     st.caption('Official Research Pilot')
     st.divider()
@@ -658,6 +658,6 @@ elif selected == 'Controlled Recovery':
 else:
     history()
 
-st.markdown(f'<div class="rs-footer">RE:SOURCE AI · '
+st.markdown(f'<div class="rs-footer">RE-SOURCE AI · '
             'Inspection evidence is separate from scientific verification · Open research prototype</div>',
             unsafe_allow_html=True)

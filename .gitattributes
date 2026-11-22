@@ -1,0 +1,4 @@
+# Keep the same line endings on every computer so MANIFEST.sha256 always checks clean
+* text=auto eol=lf
+*.png binary
+*.joblib binary

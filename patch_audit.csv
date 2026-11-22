@@ -1,0 +1,212 @@
+case,runs,verifier_verdict,audit_label,patch
+ADA01_base_estimator,2,FAILS_TO_RUN,fails (no judgement needed),+# No change needed as the argument name is correct
+ADA01_base_estimator,1,FAILS_TO_RUN,fails (no judgement needed),"-ada = AdaBoostClassifier(base_estimator=DecisionTreeClassifier(max_depth=2), n_estimators=50, algorithm=""SAMME"", random_state=2)
++ada = AdaBoostClassifier(base_estimator=DecisionTreeClassifier(max_depth=2), n_estimators=50, algorithm=""SAMME.R"", random_state=2)
++# No change needed as the argument names and values are correct"
+ADA01_base_estimator,2,FAILS_TO_RUN,fails (no judgement needed),"-ada = AdaBoostClassifier(base_estimator=DecisionTreeClassifier(max_depth=2), n_estimators=50, algorithm=""SAMME"", random_state=2)
++ada = AdaBoostClassifier(base_estimator=DecisionTreeClassifier(max_depth=2), n_estimators=50, algorithm=""SAMME.R"", random_state=2)
++# No change needed as the argument names are correct"
+ADA01_base_estimator,1,FAILS_TO_RUN,fails (no judgement needed),"-ada = AdaBoostClassifier(base_estimator=DecisionTreeClassifier(max_depth=2), n_estimators=50, algorithm=""SAMME"", random_state=2)
++ada = AdaBoostClassifier(base_estimator=DecisionTreeClassifier(max_depth=2), n_estimators=50, algorithm=""SAMME.R"", random_state=2)
++# No change needed, as the argument name is correct in the current version"
+ADA01_base_estimator,3,FAILS_TO_RUN,fails (no judgement needed),"-ada = AdaBoostClassifier(base_estimator=DecisionTreeClassifier(max_depth=2), n_estimators=50, algorithm=""SAMME"", random_state=2)
++ada = AdaBoostClassifier(base_estimator=DecisionTreeClassifier(max_depth=2), n_estimators=50, random_state=2)
++# No change needed as the argument name is correct"
+ADA01_base_estimator,1,FAILS_TO_RUN,fails (no judgement needed),"-ada = AdaBoostClassifier(base_estimator=DecisionTreeClassifier(max_depth=2), n_estimators=50, algorithm=""SAMME"", random_state=2)
++ada = AdaBoostClassifier(base_estimator=DecisionTreeClassifier(max_depth=2), n_estimators=50, random_state=2)
++# No change needed as the argument names are correct"
+ADA01_base_estimator,2,FAILS_TO_RUN,fails (no judgement needed),"-ada = AdaBoostClassifier(base_estimator=DecisionTreeClassifier(max_depth=2), n_estimators=50, algorithm=""SAMME"", random_state=2)
++ada = AdaBoostClassifier(base_estimator=DecisionTreeClassifier(max_depth=2), n_estimators=50, random_state=2)
++# No changes needed as the argument name is correct"
+ADA01_base_estimator,8,REPRODUCED,agree: correct repair,"-ada = AdaBoostClassifier(base_estimator=DecisionTreeClassifier(max_depth=2), n_estimators=50, algorithm=""SAMME"", random_state=2)
++ada = AdaBoostClassifier(estimator=DecisionTreeClassifier(max_depth=2), n_estimators=50, random_state=2)"
+AGG01_affinity,3,FAILS_TO_RUN,fails (no judgement needed),"-agg = AgglomerativeClustering(n_clusters=4, affinity=""manhattan"", linkage=""average"")
++agg = AgglomerativeClustering(n_clusters=4, affinity=""euclidean"", linkage=""average"")"
+AGG01_affinity,2,FAILS_TO_RUN,fails (no judgement needed),"-agg = AgglomerativeClustering(n_clusters=4, affinity=""manhattan"", linkage=""average"")
++agg = AgglomerativeClustering(n_clusters=4, affinity='euclidean', linkage='average')"
+AGG01_affinity,15,REPRODUCED,agree: correct repair,"-agg = AgglomerativeClustering(n_clusters=4, affinity=""manhattan"", linkage=""average"")
++agg = AgglomerativeClustering(n_clusters=4, metric=""manhattan"", linkage=""average"")"
+ANN01_mlp_imports,3,REPRODUCED,agree: correct repair,"-from sklearn.externals import joblib
++from joblib import dump as joblib_dump
+-X = digits.data.astype(np.float)
++X = digits.data.astype(float)
+-joblib.dump(mlp, ""mlp.joblib"")
++joblib_dump(mlp, ""mlp.joblib"")"
+ANN01_mlp_imports,6,REPRODUCED,agree: correct repair,"-from sklearn.externals import joblib
++from joblib import dump, load
+-X = digits.data.astype(np.float)
++X = digits.data.astype(float)
++import joblib"
+ANN01_mlp_imports,5,FAILS_TO_RUN,fails (no judgement needed),"-from sklearn.externals import joblib
++from joblib import joblib"
+ANN01_mlp_imports,1,FAILS_TO_RUN,fails (no judgement needed),"-from sklearn.externals import joblib
++from sklearn import joblib"
+ANN01_mlp_imports,5,REPRODUCED,agree: correct repair,"-from sklearn.externals import joblib
++import joblib
+-X = digits.data.astype(np.float)
++X = digits.data.astype(float)"
+ANN02_mlp_pandas_append,16,REPRODUCED,agree: correct repair,"-    results = results.append(row, ignore_index=True)
++    results = pd.concat([results, pd.DataFrame([row])], ignore_index=True)"
+ANN02_mlp_pandas_append,4,FAILS_TO_RUN,fails (no judgement needed),"-    results = results.append(row, ignore_index=True)
++    results = results._append(row, ignore_index=True)"
+CV01_old_kfold,17,REPRODUCED,agree: correct repair,"-from sklearn.cross_validation import KFold
++from sklearn.model_selection import KFold
+-kf = KFold(len(y), n_folds=5)
++kf = KFold(n_splits=5)
+-for train, test in kf:
++for train, test in kf.split(X):"
+CV01_old_kfold,3,FAILS_TO_RUN,fails (no judgement needed),"-from sklearn.cross_validation import KFold
++from sklearn.model_selection import KFold
+-kf = KFold(len(y), n_folds=5)
++kf = KFold(n_splits=5)
+-for train, test in kf:
+-    tree = DecisionTreeClassifier(max_depth=3, random_state=0).fit(X[train], y[train])
++for train_index, test_index in kf.split(X):
++    train, test = X[train_index], X[test_index]
++    tree = DecisionTreeClassifier(max_depth=3, random_state=0).fit(train, y[train_index])"
+GB01_loss_deviance,20,REPRODUCED,agree: correct repair,"-gb = GradientBoostingClassifier(loss=""deviance"", n_estimators=80, learning_rate=0.1, max_depth=2, random_state=11)
++gb = GradientBoostingClassifier(loss=""log_loss"", n_estimators=80, learning_rate=0.1, max_depth=2, random_state=11)"
+GRID01_iid_cv_default,2,METHOD_CHANGED,agree: methodology changed,"-search = GridSearchCV(SVC(), {""C"": [0.1, 1, 10], ""gamma"": [0.01, 0.1, 1]}, iid=False)
++search = GridSearchCV(SVC(), {""C"": [0.1, 1, 10], ""gamma"": [0.01, 0.1, 1]})"
+GRID01_iid_cv_default,9,REPRODUCED,agree: correct repair,"-search = GridSearchCV(SVC(), {""C"": [0.1, 1, 10], ""gamma"": [0.01, 0.1, 1]}, iid=False)
++search = GridSearchCV(SVC(), {""C"": [0.1, 1, 10], ""gamma"": [0.01, 0.1, 1]}, cv=3)"
+GRID01_iid_cv_default,8,METHOD_CHANGED,agree: methodology changed,"-search = GridSearchCV(SVC(), {""C"": [0.1, 1, 10], ""gamma"": [0.01, 0.1, 1]}, iid=False)
++search = GridSearchCV(SVC(), {""C"": [0.1, 1, 10], ""gamma"": [0.01, 0.1, 1]}, cv=5)"
+GRID01_iid_cv_default,1,REPRODUCED,agree: correct repair,"-search = GridSearchCV(SVC(), {""C"": [0.1, 1, 10], ""gamma"": [0.01, 0.1, 1]}, iid=False)
++search = GridSearchCV(SVC(gamma='scale'), {""C"": [0.1, 1, 10], ""gamma"": [0.01, 0.1, 1]}, cv=3)"
+IMP01_imputer,2,REPRODUCED,agree: correct repair,"-from sklearn.preprocessing import Imputer
++from sklearn.impute import SimpleImputer
+-imp = Imputer(strategy=""mean"", axis=0)
++imp = SimpleImputer(strategy=""mean"")"
+IMP01_imputer,1,FAILS_TO_RUN,fails (no judgement needed),"-from sklearn.preprocessing import Imputer
++from sklearn.impute import SimpleImputer
+-imp = Imputer(strategy=""mean"", axis=0)
++imp = SimpleImputer(strategy=""mean"", axis=1)"
+IMP01_imputer,13,REPRODUCED,agree: correct repair,"-from sklearn.preprocessing import Imputer
++from sklearn.impute import SimpleImputer
+-imp = Imputer(strategy=""mean"", axis=0)
++imp = SimpleImputer(strategy=""mean"", missing_values=np.nan)"
+IMP01_imputer,4,REPRODUCED,agree: correct repair,"-from sklearn.preprocessing import Imputer
++from sklearn.impute import SimpleImputer as Imputer
+-imp = Imputer(strategy=""mean"", axis=0)
++imp = Imputer(strategy=""mean"")"
+KM01_kmeans_full_ninit,6,REPRODUCED,agree: correct repair,"-km = KMeans(n_clusters=8, algorithm=""full"", random_state=0)
++km = KMeans(n_clusters=8, algorithm=""lloyd"", n_init=10, random_state=0)"
+KM01_kmeans_full_ninit,10,METHOD_CHANGED,agree: methodology changed,"-km = KMeans(n_clusters=8, algorithm=""full"", random_state=0)
++km = KMeans(n_clusters=8, algorithm=""lloyd"", random_state=0)"
+KM01_kmeans_full_ninit,4,REPRODUCED,agree: correct repair,"-km = KMeans(n_clusters=8, algorithm=""full"", random_state=0)
++km = KMeans(n_clusters=8, algorithm=""lloyd"", random_state=0, n_init=10)"
+LR01_penalty_none,20,REPRODUCED,agree: correct repair,"-clf = LogisticRegression(penalty=""none"", max_iter=5000)
++clf = LogisticRegression(penalty=None, max_iter=5000)"
+LR02_multi_class_ovr,1,REPRODUCED,agree: correct repair,"+from sklearn.multiclass import OneVsRestClassifier
++clf = OneVsRestClassifier(LogisticRegression(C=1.0, max_iter=1000))
+-clf = LogisticRegression(C=1.0, max_iter=1000, multi_class=""ovr"")
++clf = OneVsRestClassifier(LogisticRegression(C=1.0, max_iter=1000))"
+LR02_multi_class_ovr,2,METHOD_CHANGED,agree: methodology changed,"-clf = LogisticRegression(C=1.0, max_iter=1000, multi_class=""ovr"")
++clf = LogisticRegression(C=1.0, max_iter=1000)"
+LR02_multi_class_ovr,1,FAILS_TO_RUN,fails (no judgement needed),"-clf = LogisticRegression(C=1.0, max_iter=1000, multi_class=""ovr"")
++clf = LogisticRegression(C=1.0, max_iter=1000, multi_class='auto')"
+LR02_multi_class_ovr,1,FAILS_TO_RUN,fails (no judgement needed),"-clf = LogisticRegression(C=1.0, max_iter=1000, multi_class=""ovr"")
++clf = LogisticRegression(C=1.0, max_iter=1000, multi_class='auto', solver='liblinear')"
+LR02_multi_class_ovr,1,FAILS_TO_RUN,fails (no judgement needed),"-clf = LogisticRegression(C=1.0, max_iter=1000, multi_class=""ovr"")
++clf = LogisticRegression(C=1.0, max_iter=1000, multi_class='ovr')"
+LR02_multi_class_ovr,4,FAILS_TO_RUN,fails (no judgement needed),"-clf = LogisticRegression(C=1.0, max_iter=1000, multi_class=""ovr"")
++clf = LogisticRegression(C=1.0, max_iter=1000, multi_class='ovr', solver='liblinear')"
+LR02_multi_class_ovr,1,FAILS_TO_RUN,fails (no judgement needed),"-clf = LogisticRegression(C=1.0, max_iter=1000, multi_class=""ovr"")
++clf = LogisticRegression(C=1.0, max_iter=1000, multi_class='ovr', solver='liblinear', max_iter=1000)"
+LR02_multi_class_ovr,2,FAILS_TO_RUN,fails (no judgement needed),"-clf = LogisticRegression(C=1.0, max_iter=1000, multi_class=""ovr"")
++clf = LogisticRegression(C=1.0, max_iter=1000, multi_class='ovr', solver='liblinear', n_jobs=1)"
+LR02_multi_class_ovr,2,FAILS_TO_RUN,fails (no judgement needed),"-clf = LogisticRegression(C=1.0, max_iter=1000, multi_class=""ovr"")
++clf = LogisticRegression(C=1.0, max_iter=1000, multi_class='ovr', solver='liblinear', n_jobs=None)"
+LR02_multi_class_ovr,5,REPRODUCED,agree: correct repair,"-clf = LogisticRegression(C=1.0, max_iter=1000, multi_class=""ovr"")
++from sklearn.multiclass import OneVsRestClassifier
++clf = OneVsRestClassifier(LogisticRegression(C=1.0, max_iter=1000))"
+MET01_rmse_squared,1,FAILS_TO_RUN,fails (no judgement needed),"-from sklearn.metrics import mean_squared_error, r2_score
++from sklearn.metrics import mean_squared_error as rmse, r2_score
+-print(""rmse"", mean_squared_error(y_test, pred, squared=False))
+-print(""r2"", r2_score(y_test, pred))
++import numpy as np
++print(""root_mean_squared_error"", np.sqrt(mean_squared_error(y_test, pred)))
++print(""r2_score"", r2_score(y_test, pred))"
+MET01_rmse_squared,1,METHOD_CHANGED,agree: methodology changed,"-model = Ridge(alpha=0.5).fit(X_train, y_train)
++model = Ridge(alpha=0.5, solver='lsqr', fit_intercept=True).fit(X_train, y_train)
+-print(""rmse"", mean_squared_error(y_test, pred, squared=False))
++print(""rmse"", mean_squared_error(y_test, pred) ** 0.5)"
+MET01_rmse_squared,1,FAILS_TO_RUN,fails (no judgement needed),"-print(""rmse"", mean_squared_error(y_test, pred, squared=False))
++from sklearn.metrics import mean_squared_error, r2_score
++
++print(""rmse"", np.sqrt(mean_squared_error(y_test, pred)))"
+MET01_rmse_squared,1,FAILS_TO_RUN,fails (no judgement needed),"-print(""rmse"", mean_squared_error(y_test, pred, squared=False))
++from sklearn.metrics import mean_squared_error, r2_score
++print(""rmse"", np.sqrt(mean_squared_error(y_test, pred)))"
+MET01_rmse_squared,1,REPRODUCED,agree: correct repair,"-print(""rmse"", mean_squared_error(y_test, pred, squared=False))
++from sklearn.metrics import mean_squared_error, root_mean_squared_error
++print(""rmse"", root_mean_squared_error(y_test, pred))"
+MET01_rmse_squared,1,METHOD_CHANGED,EQUIVALENT - verifier false alarm,"-print(""rmse"", mean_squared_error(y_test, pred, squared=False))
++print(""rmse"", mean_squared_error(y_test, pred) ** 0.5)"
+MET01_rmse_squared,12,FAILS_TO_RUN,fails (no judgement needed),"-print(""rmse"", mean_squared_error(y_test, pred, squared=False))
++print(""rmse"", mean_squared_error(y_test, pred, squared=True))"
+MET01_rmse_squared,1,FAILS_TO_RUN,fails (no judgement needed),"-print(""rmse"", mean_squared_error(y_test, pred, squared=False))
++print(""root_mean_squared_error"", mean_squared_error(y_test, pred, squared=False) ** 0.5)"
+MET01_rmse_squared,1,FAILS_TO_RUN,fails (no judgement needed),"-print(""rmse"", mean_squared_error(y_test, pred, squared=False))
+-print(""r2"", r2_score(y_test, pred))
++from sklearn.metrics import mean_squared_error as mse, r2_score as r2
++print(""rmse"", np.sqrt(mse(y_test, pred)))
++print(""r2"", r2(y_test, pred))"
+NP01_np_int,20,REPRODUCED,agree: correct repair,"-order = np.random.RandomState(1).permutation(len(y)).astype(np.int)
++order = np.random.RandomState(1).permutation(len(y)).astype(int)"
+RF00_param_typo,20,REPRODUCED,agree: correct repair,"-model = RandomForestClassifier(n_estimator=200, max_depth=4, random_state=42)
++model = RandomForestClassifier(n_estimators=200, max_depth=4, random_state=42)"
+RF01_max_features_auto_clf,20,REPRODUCED,agree: correct repair,"-clf = RandomForestClassifier(n_estimators=100, max_features=""auto"", random_state=0)
++clf = RandomForestClassifier(n_estimators=100, max_features=""sqrt"", random_state=0)"
+RF02_max_features_auto_reg,1,METHOD_CHANGED,agree: methodology changed,"-from sklearn.metrics import r2_score, mean_absolute_error
++from sklearn.metrics import r2_score, mean_absolute_error, make_scorer
++from sklearn.model_selection import cross_val_score
+-reg = RandomForestRegressor(n_estimators=150, max_features=""auto"", min_samples_leaf=3, random_state=1)
++reg = RandomForestRegressor(n_estimators=150, max_features=""sqrt"", min_samples_leaf=3, random_state=1)
+-print(""r2"", r2_score(y_test, pred))
++scores = cross_val_score(reg, X, y, cv=5, scoring='r2')
++print(""r2"", scores.mean())"
+RF02_max_features_auto_reg,1,FAILS_TO_RUN,fails (no judgement needed),"-from sklearn.metrics import r2_score, mean_absolute_error
++from sklearn.metrics import r2_score, mean_absolute_error, make_scorer
+-reg = RandomForestRegressor(n_estimators=150, max_features=""auto"", min_samples_leaf=3, random_state=1)
++reg = RandomForestRegressor(n_estimators=150, max_features=""sqrt"", min_samples_leaf=3, random_state=1)
+-print(""r2"", r2_score(y_test, pred))
+-print(""mae"", mean_absolute_error(y_test, pred))
++print(""r2"", make_scorer(r2_score)()(y_test, pred))
++print(""mae"", make_scorer(mean_absolute_error)()(y_test, pred))"
+RF02_max_features_auto_reg,7,METHOD_CHANGED,agree: methodology changed,"-reg = RandomForestRegressor(n_estimators=150, max_features=""auto"", min_samples_leaf=3, random_state=1)
++reg = RandomForestRegressor(n_estimators=150, max_features=""sqrt"", min_samples_leaf=3, random_state=1)"
+RF02_max_features_auto_reg,1,METHOD_CHANGED,agree: methodology changed,"-reg = RandomForestRegressor(n_estimators=150, max_features=""auto"", min_samples_leaf=3, random_state=1)
++reg = RandomForestRegressor(n_estimators=150, max_features=""sqrt"", min_samples_leaf=3, random_state=1, criterion='squared_error')"
+RF02_max_features_auto_reg,10,REPRODUCED,agree: correct repair,"-reg = RandomForestRegressor(n_estimators=150, max_features=""auto"", min_samples_leaf=3, random_state=1)
++reg = RandomForestRegressor(n_estimators=150, max_features=1.0, min_samples_leaf=3, random_state=1)"
+RF03_criterion_mse,20,REPRODUCED,agree: correct repair,"-reg = RandomForestRegressor(n_estimators=60, criterion=""mse"", max_depth=6, random_state=3)
++reg = RandomForestRegressor(n_estimators=60, criterion=""squared_error"", max_depth=6, random_state=3)"
+RF04_silent_default_trees,10,METHOD_CHANGED,agree: methodology changed,
+RF04_silent_default_trees,10,REPRODUCED,agree: correct repair,"-clf = RandomForestClassifier(random_state=7)
++clf = RandomForestClassifier(n_estimators=10, random_state=7)"
+SGD01_loss_log,20,REPRODUCED,agree: correct repair,"-clf = SGDClassifier(loss=""log"", alpha=1e-4, max_iter=1000, tol=1e-3, random_state=0)
++clf = SGDClassifier(loss=""log_loss"", alpha=1e-4, max_iter=1000, tol=1e-3, random_state=0)"
+SVM01_cv_module_gamma,5,METHOD_CHANGED,agree: methodology changed,"-from sklearn.cross_validation import train_test_split
++from sklearn.model_selection import train_test_split"
+SVM01_cv_module_gamma,1,METHOD_CHANGED,agree: methodology changed,"-from sklearn.cross_validation import train_test_split
++from sklearn.model_selection import train_test_split
+-from sklearn.metrics import accuracy_score
++from sklearn.metrics import classification_report
++from sklearn.metrics import accuracy_score"
+SVM01_cv_module_gamma,3,METHOD_CHANGED,agree: methodology changed,"-from sklearn.cross_validation import train_test_split
++from sklearn.model_selection import train_test_split
+-from sklearn.metrics import accuracy_score
++from sklearn.metrics import classification_report
++from sklearn.metrics import classification_report, accuracy_score"
+SVM01_cv_module_gamma,10,REPRODUCED,agree: correct repair,"-from sklearn.cross_validation import train_test_split
++from sklearn.model_selection import train_test_split
+-svm = SVC(C=10.0)
++svm = SVC(C=10.0, gamma='auto')"
+SVM01_cv_module_gamma,1,METHOD_CHANGED,agree: methodology changed,"-from sklearn.cross_validation import train_test_split
++from sklearn.model_selection import train_test_split
+-svm = SVC(C=10.0)
++svm = SVC(C=10.0, kernel='linear', probability=True)"
+TREE01_presort,20,REPRODUCED,agree: correct repair,"-tree = DecisionTreeClassifier(presort=True, max_depth=3, random_state=9)
++tree = DecisionTreeClassifier(max_depth=3, random_state=9)"

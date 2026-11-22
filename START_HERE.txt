@@ -1,4 +1,4 @@
-RE:SOURCE AI — OFFICIAL RESEARCH DEMONSTRATION
+RE-SOURCE AI — OFFICIAL RESEARCH DEMONSTRATION
 
 1. Extract the ZIP and open the RE_SOURCE_AI folder in VS Code.
 2. In PowerShell, run:
@@ -25,4 +25,4 @@ This is an environment failure, NOT a scientifically reproduced paper.
 The invalid Qwen proposal should be rejected, not executed. The research
 trial now blocks such dangerous whole-file replacements.
 
-For your teacher, read docs/TEACHER_DEFENSE.md.
+For a guided demonstration, read docs/DEMO_GUIDE.md.

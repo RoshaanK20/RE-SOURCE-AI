@@ -1,16 +1,18 @@
 # RE-SOURCE AI | Official Research Pilot
 
-Experimental research software · **Submission date: 23 November 2026**
+Research software for the paper *RE-SOURCE AI: An Autonomous Agent for Recovering and Verifying Machine Learning Experiments* (ICCRT-2026, SMIU Karachi).
 
-RE:SOURCE AI investigates compatibility failures in older Python ML research code, uses locally running **Qwen via Ollama** to propose minimal code patches, and checks whether an attempted repair has sufficient evidence to preserve the original scientific methodology. The app is a Streamlit dashboard designed to run in VS Code on Windows. **Docker is optional.**
+RE-SOURCE AI investigates compatibility failures in older Python ML research code, uses locally running **Qwen via Ollama** to propose minimal code patches, and checks whether an attempted repair has sufficient evidence to preserve the original scientific methodology. The app is a Streamlit dashboard designed to run in VS Code on Windows. **Docker is optional.**
 
 > **Research claim, carefully scoped:** The project's scientific-integrity checks can distinguish selected valid and invalid modifications on measured *controlled* experiments using genuine datasets. **No independently verified recovery of a published research paper is included in this release.**
 
 ## 1. Start here (Windows / VS Code)
 
-Extract the ZIP, then open the **`RE_SOURCE_AI`** folder in VS Code. Run the following from its terminal (Python 3.12 or 3.13 recommended):
+Clone the repository and open the folder in VS Code. Run the following from its terminal (Python 3.12 or 3.13 recommended):
 
 ```powershell
+git clone https://github.com/RoshaanK20/RE-SOURCE-AI.git
+cd RE-SOURCE-AI
 python -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -r requirements.txt
 .\.venv\Scripts\python.exe -m streamlit run app.py
@@ -54,6 +56,37 @@ This runs Python regression tests, scientific-integrity challenges on the **Brea
 
 These experiments use **real datasets but deliberately constructed errors**. The scripted Diabetes correction is **not** Qwen-generated. Source-trace checks operate on selected Scikit-learn tasks and do **not** generalize automatically to any framework.
 
+## Paper results
+
+Everything needed to check the numbers in the paper is in this repository:
+
+| Folder or file | Contents |
+|---|---|
+| `benchmark/cases/` | The 21 broken experiments, their reference scripts and the 51 labelled fixes |
+| `results/verifier_eval/` | Acceptance rules on the 51 labelled fixes (Table III) |
+| `results/llm_runs/runs_temperature0.jsonl` | 168 repair runs: Qwen2.5-Coder 7B and 14B at temperature 0 |
+| `results/llm_runs/runs_temperature02_3seeds.jsonl` | 252 repair runs: 7B at temperature 0.2, three seeds |
+| `results/llm_runs/patch_audit.csv` | Manual review of every distinct final patch |
+| `results/real_data_pilot.json` | Verifier check on Breast Cancer Wisconsin and Wine |
+
+Rebuild the tables and Fig. 2 from the logs (no GPU or language model needed):
+
+```powershell
+.\.venv\Scripts\python.exe experiments\paper_results.py
+```
+
+Re-judge all 420 logged patches with the current verifier:
+
+```powershell
+.\.venv\Scripts\python.exe experiments\reverify_runs.py
+```
+
+Repeat the experiment on the 51 labelled fixes:
+
+```powershell
+.\.venv\Scripts\python.exe experiments\evaluate_verifier.py
+```
+
 ## 4. Real research repository: observed GCN trial
 
 The public research-code candidate **Graph Convolutional Networks** is linked at https://github.com/tkipf/gcn. A user-observed local trial found `gcn/train.py` and produced `ModuleNotFoundError: No module named 'tensorflow'`. This demonstrates an **environment dependency failure**, not a confirmed bug in the original paper. Qwen later proposed a malformed, destructive replacement containing patch markers; that proposal **must be rejected**, and the candidate was not shown to reproduce the paper.
@@ -81,14 +114,18 @@ The verdict `PASSED_SPECIFIED_SCIENTIFIC_CHECKS` means **only the supplied evide
 
 | Name | Role | Affiliation |
 |---|---|---|
-| Roshaan Ahmed Khan | Lead developer / Researcher | Department Of Artificial Intelligence, Sindh Madressatul Islam University, Karachi, Pakistan |
-| Safa | Developer / Researcher | Department Of Artificial Intelligence, Sindh Madressatul Islam University, Karachi, Pakistan |
+| Syed Muhammad Hassan Zaidi | Supervisor | Department of AI and Mathematical Sciences, Sindh Madressatul Islam University, Karachi, Pakistan |
+| Roshaan Ahmed Khan | Lead developer, researcher | Department of AI and Mathematical Sciences, Sindh Madressatul Islam University, Karachi, Pakistan |
+| Safa | Developer, researcher | Department of AI and Mathematical Sciences, Sindh Madressatul Islam University, Karachi, Pakistan |
 
-**Contact:** roshaanahmed2005@gmail.com
-**Contact:** safakhan.tech@gmail.com
+**Contact:** roshaanahmed2005@gmail.com, safakhan.tech@gmail.com
 
 ## Citation
 
 If you use this work, please cite:
 
-> Roshaan Ahmed Khan, Safa. *RE-SOURCE AI: An Agent for Recovering and Verifying Machine Learning Experiments.* Sindh Madressatul Islam University, 2026.
+> S. M. H. Zaidi, R. A. Khan, and Safa, "RE-SOURCE AI: An Autonomous Agent for Recovering and Verifying Machine Learning Experiments," in *Proc. 5th Int. Conf. Computing and Related Technologies (ICCRT)*, Karachi, Pakistan, 2026.
+
+## License
+
+Released under the MIT License. See `LICENSE`.

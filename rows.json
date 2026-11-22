@@ -1,0 +1,1757 @@
+[
+  {
+    "case": "ADA01_base_estimator",
+    "category": "crash+trap",
+    "fix": "oracle.py",
+    "label": "equivalent",
+    "runs": true,
+    "verdict": "REPRODUCED",
+    "RUNS": true,
+    "SCORE10": true,
+    "VERIFIER": true,
+    "violations": [],
+    "result_deltas": [
+      {
+        "metric": "accuracy_score",
+        "reference": 0.9814814814814815,
+        "candidate": 0.9814814814814815,
+        "delta": 0.0,
+        "within_tol": true
+      }
+    ],
+    "primary_metric": {
+      "reference_name": "accuracy_score",
+      "candidate_name": "accuracy_score",
+      "reference": 0.9814814814814815,
+      "candidate": 0.9814814814814815
+    },
+    "broken_crashes": true,
+    "stderr_tail": ""
+  },
+  {
+    "case": "ADA01_base_estimator",
+    "category": "crash+trap",
+    "fix": "delete_both.py",
+    "label": "changes_method",
+    "runs": true,
+    "verdict": "METHOD_CHANGED",
+    "RUNS": true,
+    "SCORE10": true,
+    "VERIFIER": false,
+    "violations": [
+      "AdaBoostClassifier (fit #1) estimator: was DecisionTreeClassifier(...), now None"
+    ],
+    "result_deltas": [
+      {
+        "metric": "accuracy_score",
+        "reference": 0.9814814814814815,
+        "candidate": 0.9814814814814815,
+        "delta": 0.0,
+        "within_tol": true
+      }
+    ],
+    "primary_metric": {
+      "reference_name": "accuracy_score",
+      "candidate_name": "accuracy_score",
+      "reference": 0.9814814814814815,
+      "candidate": 0.9814814814814815
+    },
+    "broken_crashes": true,
+    "stderr_tail": ""
+  },
+  {
+    "case": "AGG01_affinity",
+    "category": "crash+trap",
+    "fix": "oracle.py",
+    "label": "equivalent",
+    "runs": true,
+    "verdict": "REPRODUCED",
+    "RUNS": true,
+    "SCORE10": true,
+    "VERIFIER": true,
+    "violations": [],
+    "result_deltas": [
+      {
+        "metric": "adjusted_rand_score",
+        "reference": 0.7226573271585371,
+        "candidate": 0.7226573271585371,
+        "delta": 0.0,
+        "within_tol": true
+      }
+    ],
+    "primary_metric": {
+      "reference_name": "adjusted_rand_score",
+      "candidate_name": "adjusted_rand_score",
+      "reference": 0.7226573271585371,
+      "candidate": 0.7226573271585371
+    },
+    "broken_crashes": true,
+    "stderr_tail": ""
+  },
+  {
+    "case": "AGG01_affinity",
+    "category": "crash+trap",
+    "fix": "delete_arg.py",
+    "label": "changes_method",
+    "runs": true,
+    "verdict": "METHOD_CHANGED",
+    "RUNS": true,
+    "SCORE10": false,
+    "VERIFIER": false,
+    "violations": [
+      "AgglomerativeClustering (fit #1) metric: was 'manhattan', now 'euclidean'"
+    ],
+    "result_deltas": [
+      {
+        "metric": "adjusted_rand_score",
+        "reference": 0.7226573271585371,
+        "candidate": 0.8292982602220768,
+        "delta": 0.10664093306353961,
+        "within_tol": false
+      }
+    ],
+    "primary_metric": {
+      "reference_name": "adjusted_rand_score",
+      "candidate_name": "adjusted_rand_score",
+      "reference": 0.7226573271585371,
+      "candidate": 0.8292982602220768
+    },
+    "broken_crashes": true,
+    "stderr_tail": ""
+  },
+  {
+    "case": "ANN01_mlp_imports",
+    "category": "crash+trap",
+    "fix": "oracle.py",
+    "label": "equivalent",
+    "runs": true,
+    "verdict": "REPRODUCED",
+    "RUNS": true,
+    "SCORE10": true,
+    "VERIFIER": true,
+    "violations": [],
+    "result_deltas": [
+      {
+        "metric": "accuracy_score",
+        "reference": 0.9688888888888889,
+        "candidate": 0.9688888888888889,
+        "delta": 0.0,
+        "within_tol": true
+      }
+    ],
+    "primary_metric": {
+      "reference_name": "accuracy_score",
+      "candidate_name": "accuracy_score",
+      "reference": 0.9688888888888889,
+      "candidate": 0.9688888888888889
+    },
+    "broken_crashes": true,
+    "stderr_tail": ""
+  },
+  {
+    "case": "ANN01_mlp_imports",
+    "category": "crash+trap",
+    "fix": "builtin_float.py",
+    "label": "equivalent",
+    "runs": true,
+    "verdict": "REPRODUCED",
+    "RUNS": true,
+    "SCORE10": true,
+    "VERIFIER": true,
+    "violations": [],
+    "result_deltas": [
+      {
+        "metric": "accuracy_score",
+        "reference": 0.9688888888888889,
+        "candidate": 0.9688888888888889,
+        "delta": 0.0,
+        "within_tol": true
+      }
+    ],
+    "primary_metric": {
+      "reference_name": "accuracy_score",
+      "candidate_name": "accuracy_score",
+      "reference": 0.9688888888888889,
+      "candidate": 0.9688888888888889
+    },
+    "broken_crashes": true,
+    "stderr_tail": ""
+  },
+  {
+    "case": "ANN01_mlp_imports",
+    "category": "crash+trap",
+    "fix": "raise_max_iter.py",
+    "label": "changes_method",
+    "runs": true,
+    "verdict": "METHOD_CHANGED",
+    "RUNS": true,
+    "SCORE10": true,
+    "VERIFIER": false,
+    "violations": [
+      "MLPClassifier (fit #2) max_iter: was 60, now 500"
+    ],
+    "result_deltas": [
+      {
+        "metric": "accuracy_score",
+        "reference": 0.9688888888888889,
+        "candidate": 0.9733333333333334,
+        "delta": 0.004444444444444473,
+        "within_tol": true
+      }
+    ],
+    "primary_metric": {
+      "reference_name": "accuracy_score",
+      "candidate_name": "accuracy_score",
+      "reference": 0.9688888888888889,
+      "candidate": 0.9733333333333334
+    },
+    "broken_crashes": true,
+    "stderr_tail": ""
+  },
+  {
+    "case": "ANN01_mlp_imports",
+    "category": "crash+trap",
+    "fix": "float32.py",
+    "label": "changes_method",
+    "runs": true,
+    "verdict": "METHOD_CHANGED",
+    "RUNS": true,
+    "SCORE10": true,
+    "VERIFIER": false,
+    "violations": [
+      "MLPClassifier (fit #2) trained on different rows/values than the original",
+      "MLPClassifier (fit #2) training feature/label pairings changed",
+      "prediction #1 used different evaluation features"
+    ],
+    "result_deltas": [
+      {
+        "metric": "accuracy_score",
+        "reference": 0.9688888888888889,
+        "candidate": 0.9688888888888889,
+        "delta": 0.0,
+        "within_tol": true
+      }
+    ],
+    "primary_metric": {
+      "reference_name": "accuracy_score",
+      "candidate_name": "accuracy_score",
+      "reference": 0.9688888888888889,
+      "candidate": 0.9688888888888889
+    },
+    "broken_crashes": true,
+    "stderr_tail": ""
+  },
+  {
+    "case": "ANN02_mlp_pandas_append",
+    "category": "crash",
+    "fix": "oracle.py",
+    "label": "equivalent",
+    "runs": true,
+    "verdict": "REPRODUCED",
+    "RUNS": true,
+    "SCORE10": true,
+    "VERIFIER": true,
+    "violations": [],
+    "result_deltas": [
+      {
+        "metric": "accuracy_score",
+        "reference": 0.9790209790209791,
+        "candidate": 0.9790209790209791,
+        "delta": 0.0,
+        "within_tol": true
+      },
+      {
+        "metric": "roc_auc_score",
+        "reference": 0.9993710691823899,
+        "candidate": 0.9993710691823899,
+        "delta": 0.0,
+        "within_tol": true
+      },
+      {
+        "metric": "accuracy_score",
+        "reference": 0.986013986013986,
+        "candidate": 0.986013986013986,
+        "delta": 0.0,
+        "within_tol": true
+      },
+      {
+        "metric": "roc_auc_score",
+        "reference": 0.9941299790356394,
+        "candidate": 0.9941299790356394,
+        "delta": 0.0,
+        "within_tol": true
+      }
+    ],
+    "primary_metric": {
+      "reference_name": "accuracy_score",
+      "candidate_name": "accuracy_score",
+      "reference": 0.9790209790209791,
+      "candidate": 0.9790209790209791
+    },
+    "broken_crashes": true,
+    "stderr_tail": ""
+  },
+  {
+    "case": "ANN02_mlp_pandas_append",
+    "category": "crash",
+    "fix": "loc_insert.py",
+    "label": "equivalent",
+    "runs": true,
+    "verdict": "REPRODUCED",
+    "RUNS": true,
+    "SCORE10": true,
+    "VERIFIER": true,
+    "violations": [],
+    "result_deltas": [
+      {
+        "metric": "accuracy_score",
+        "reference": 0.9790209790209791,
+        "candidate": 0.9790209790209791,
+        "delta": 0.0,
+        "within_tol": true
+      },
+      {
+        "metric": "roc_auc_score",
+        "reference": 0.9993710691823899,
+        "candidate": 0.9993710691823899,
+        "delta": 0.0,
+        "within_tol": true
+      },
+      {
+        "metric": "accuracy_score",
+        "reference": 0.986013986013986,
+        "candidate": 0.986013986013986,
+        "delta": 0.0,
+        "within_tol": true
+      },
+      {
+        "metric": "roc_auc_score",
+        "reference": 0.9941299790356394,
+        "candidate": 0.9941299790356394,
+        "delta": 0.0,
+        "within_tol": true
+      }
+    ],
+    "primary_metric": {
+      "reference_name": "accuracy_score",
+      "candidate_name": "accuracy_score",
+      "reference": 0.9790209790209791,
+      "candidate": 0.9790209790209791
+    },
+    "broken_crashes": true,
+    "stderr_tail": ""
+  },
+  {
+    "case": "CV01_old_kfold",
+    "category": "crash+trap",
+    "fix": "oracle.py",
+    "label": "equivalent",
+    "runs": true,
+    "verdict": "REPRODUCED",
+    "RUNS": true,
+    "SCORE10": true,
+    "VERIFIER": true,
+    "violations": [],
+    "result_deltas": [
+      {
+        "metric": "accuracy_score",
+        "reference": 0.8596491228070176,
+        "candidate": 0.8596491228070176,
+        "delta": 0.0,
+        "within_tol": true
+      },
+      {
+        "metric": "accuracy_score",
+        "reference": 0.9210526315789473,
+        "candidate": 0.9210526315789473,
+        "delta": 0.0,
+        "within_tol": true
+      },
+      {
+        "metric": "accuracy_score",
+        "reference": 0.956140350877193,
+        "candidate": 0.956140350877193,
+        "delta": 0.0,
+        "within_tol": true
+      },
+      {
+        "metric": "accuracy_score",
+        "reference": 0.9298245614035088,
+        "candidate": 0.9298245614035088,
+        "delta": 0.0,
+        "within_tol": true
+      },
+      {
+        "metric": "accuracy_score",
+        "reference": 0.8938053097345132,
+        "candidate": 0.8938053097345132,
+        "delta": 0.0,
+        "within_tol": true
+      }
+    ],
+    "primary_metric": {
+      "reference_name": "accuracy_score",
+      "candidate_name": "accuracy_score",
+      "reference": 0.8596491228070176,
+      "candidate": 0.8596491228070176
+    },
+    "broken_crashes": true,
+    "stderr_tail": ""
+  },
+  {
+    "case": "CV01_old_kfold",
+    "category": "crash+trap",
+    "fix": "add_shuffle.py",
+    "label": "changes_method",
+    "runs": true,
+    "verdict": "METHOD_CHANGED",
+    "RUNS": true,
+    "SCORE10": true,
+    "VERIFIER": false,
+    "violations": [
+      "DecisionTreeClassifier (fit #1) trained on different rows/values than the original",
+      "DecisionTreeClassifier (fit #1) trained on different target labels/values",
+      "DecisionTreeClassifier (fit #1) training feature/label pairings changed",
+      "DecisionTreeClassifier (fit #2) trained on different rows/values than the original",
+      "DecisionTreeClassifier (fit #2) trained on different target labels/values",
+      "DecisionTreeClassifier (fit #2) training feature/label pairings changed",
+      "DecisionTreeClassifier (fit #3) trained on different rows/values than the original",
+      "DecisionTreeClassifier (fit #3) trained on different target labels/values",
+      "DecisionTreeClassifier (fit #3) training feature/label pairings changed",
+      "DecisionTreeClassifier (fit #4) trained on different rows/values than the original",
+      "DecisionTreeClassifier (fit #4) trained on different target labels/values",
+      "DecisionTreeClassifier (fit #4) training feature/label pairings changed",
+      "DecisionTreeClassifier (fit #5) trained on different rows/values than the original",
+      "DecisionTreeClassifier (fit #5) trained on different target labels/values",
+      "DecisionTreeClassifier (fit #5) training feature/label pairings changed",
+      "cross-validation folds differ (KFold(n_splits=5, random_state=None, shuffle=False) vs KFold(n_splits=5, random_state=42, shuffle=True))",
+      "cross-validation folds differ (KFold(n_splits=5, random_state=None, shuffle=False) vs KFold(n_splits=5, random_state=42, shuffle=True))",
+      "cross-validation folds differ (KFold(n_splits=5, random_state=None, shuffle=False) vs KFold(n_splits=5, random_state=42, shuffle=True))",
+      "prediction #1 used different evaluation features",
+      "prediction #2 used different evaluation features",
+      "prediction #3 used different evaluation features",
+      "prediction #4 used different evaluation features",
+      "prediction #5 used different evaluation features",
+      "accuracy_score is computed on different test labels than the original",
+      "accuracy_score is computed on different test labels than the original",
+      "accuracy_score is computed on different test labels than the original",
+      "accuracy_score is computed on different test labels than the original",
+      "accuracy_score is computed on different test labels than the original"
+    ],
+    "result_deltas": [
+      {
+        "metric": "accuracy_score",
+        "reference": 0.8596491228070176,
+        "candidate": 0.9385964912280702,
+        "delta": 0.07894736842105265,
+        "within_tol": false
+      },
+      {
+        "metric": "accuracy_score",
+        "reference": 0.9210526315789473,
+        "candidate": 0.9649122807017544,
+        "delta": 0.04385964912280704,
+        "within_tol": false
+      },
+      {
+        "metric": "accuracy_score",
+        "reference": 0.956140350877193,
+        "candidate": 0.9122807017543859,
+        "delta": -0.04385964912280704,
+        "within_tol": false
+      },
+      {
+        "metric": "accuracy_score",
+        "reference": 0.9298245614035088,
+        "candidate": 0.9210526315789473,
+        "delta": -0.00877192982456143,
+        "within_tol": true
+      },
+      {
+        "metric": "accuracy_score",
+        "reference": 0.8938053097345132,
+        "candidate": 0.9380530973451328,
+        "delta": 0.04424778761061954,
+        "within_tol": false
+      }
+    ],
+    "primary_metric": {
+      "reference_name": "accuracy_score",
+      "candidate_name": "accuracy_score",
+      "reference": 0.8596491228070176,
+      "candidate": 0.9385964912280702
+    },
+    "broken_crashes": true,
+    "stderr_tail": ""
+  },
+  {
+    "case": "GB01_loss_deviance",
+    "category": "crash",
+    "fix": "oracle.py",
+    "label": "equivalent",
+    "runs": true,
+    "verdict": "REPRODUCED",
+    "RUNS": true,
+    "SCORE10": true,
+    "VERIFIER": true,
+    "violations": [],
+    "result_deltas": [
+      {
+        "metric": "accuracy_score",
+        "reference": 0.9370629370629371,
+        "candidate": 0.9370629370629371,
+        "delta": 0.0,
+        "within_tol": true
+      },
+      {
+        "metric": "f1_score",
+        "reference": 0.9513513513513514,
+        "candidate": 0.9513513513513514,
+        "delta": 0.0,
+        "within_tol": true
+      }
+    ],
+    "primary_metric": {
+      "reference_name": "accuracy_score",
+      "candidate_name": "accuracy_score",
+      "reference": 0.9370629370629371,
+      "candidate": 0.9370629370629371
+    },
+    "broken_crashes": true,
+    "stderr_tail": ""
+  },
+  {
+    "case": "GB01_loss_deviance",
+    "category": "crash",
+    "fix": "delete_arg.py",
+    "label": "equivalent",
+    "runs": true,
+    "verdict": "REPRODUCED",
+    "RUNS": true,
+    "SCORE10": true,
+    "VERIFIER": true,
+    "violations": [],
+    "result_deltas": [
+      {
+        "metric": "accuracy_score",
+        "reference": 0.9370629370629371,
+        "candidate": 0.9370629370629371,
+        "delta": 0.0,
+        "within_tol": true
+      },
+      {
+        "metric": "f1_score",
+        "reference": 0.9513513513513514,
+        "candidate": 0.9513513513513514,
+        "delta": 0.0,
+        "within_tol": true
+      }
+    ],
+    "primary_metric": {
+      "reference_name": "accuracy_score",
+      "candidate_name": "accuracy_score",
+      "reference": 0.9370629370629371,
+      "candidate": 0.9370629370629371
+    },
+    "broken_crashes": true,
+    "stderr_tail": ""
+  },
+  {
+    "case": "GB01_loss_deviance",
+    "category": "crash",
+    "fix": "exponential.py",
+    "label": "changes_method",
+    "runs": true,
+    "verdict": "METHOD_CHANGED",
+    "RUNS": true,
+    "SCORE10": true,
+    "VERIFIER": false,
+    "violations": [
+      "GradientBoostingClassifier (fit #1) loss: was 'log_loss', now 'exponential'"
+    ],
+    "result_deltas": [
+      {
+        "metric": "accuracy_score",
+        "reference": 0.9370629370629371,
+        "candidate": 0.9370629370629371,
+        "delta": 0.0,
+        "within_tol": true
+      },
+      {
+        "metric": "f1_score",
+        "reference": 0.9513513513513514,
+        "candidate": 0.9513513513513514,
+        "delta": 0.0,
+        "within_tol": true
+      }
+    ],
+    "primary_metric": {
+      "reference_name": "accuracy_score",
+      "candidate_name": "accuracy_score",
+      "reference": 0.9370629370629371,
+      "candidate": 0.9370629370629371
+    },
+    "broken_crashes": true,
+    "stderr_tail": ""
+  },
+  {
+    "case": "GRID01_iid_cv_default",
+    "category": "crash+silent_drift",
+    "fix": "oracle.py",
+    "label": "equivalent",
+    "runs": true,
+    "verdict": "REPRODUCED",
+    "RUNS": true,
+    "SCORE10": true,
+    "VERIFIER": true,
+    "violations": [],
+    "result_deltas": [
+      {
+        "metric": "accuracy_score",
+        "reference": 0.9629629629629629,
+        "candidate": 0.9629629629629629,
+        "delta": 0.0,
+        "within_tol": true
+      }
+    ],
+    "primary_metric": {
+      "reference_name": "accuracy_score",
+      "candidate_name": "accuracy_score",
+      "reference": 0.9629629629629629,
+      "candidate": 0.9629629629629629
+    },
+    "broken_crashes": true,
+    "stderr_tail": ""
+  },
+  {
+    "case": "GRID01_iid_cv_default",
+    "category": "crash+silent_drift",
+    "fix": "delete_iid_only.py",
+    "label": "changes_method",
+    "runs": true,
+    "verdict": "METHOD_CHANGED",
+    "RUNS": true,
+    "SCORE10": true,
+    "VERIFIER": false,
+    "violations": [
+      "GridSearchCV (fit #2) cv: was 3, now None"
+    ],
+    "result_deltas": [
+      {
+        "metric": "accuracy_score",
+        "reference": 0.9629629629629629,
+        "candidate": 0.9629629629629629,
+        "delta": 0.0,
+        "within_tol": true
+      }
+    ],
+    "primary_metric": {
+      "reference_name": "accuracy_score",
+      "candidate_name": "accuracy_score",
+      "reference": 0.9629629629629629,
+      "candidate": 0.9629629629629629
+    },
+    "broken_crashes": true,
+    "stderr_tail": ""
+  },
+  {
+    "case": "IMP01_imputer",
+    "category": "crash+trap",
+    "fix": "oracle.py",
+    "label": "equivalent",
+    "runs": true,
+    "verdict": "REPRODUCED",
+    "RUNS": true,
+    "SCORE10": true,
+    "VERIFIER": true,
+    "violations": [],
+    "result_deltas": [
+      {
+        "metric": "accuracy_score",
+        "reference": 0.972027972027972,
+        "candidate": 0.972027972027972,
+        "delta": 0.0,
+        "within_tol": true
+      }
+    ],
+    "primary_metric": {
+      "reference_name": "accuracy_score",
+      "candidate_name": "accuracy_score",
+      "reference": 0.972027972027972,
+      "candidate": 0.972027972027972
+    },
+    "broken_crashes": true,
+    "stderr_tail": ""
+  },
+  {
+    "case": "IMP01_imputer",
+    "category": "crash+trap",
+    "fix": "impute_before_split.py",
+    "label": "changes_method",
+    "runs": true,
+    "verdict": "METHOD_CHANGED",
+    "RUNS": true,
+    "SCORE10": true,
+    "VERIFIER": false,
+    "violations": [
+      "SimpleImputer (fit #1) training data shape was [426, 30], now [569, 30]",
+      "RandomForestClassifier (fit #2) trained on different rows/values than the original",
+      "RandomForestClassifier (fit #2) training feature/label pairings changed",
+      "train_test_split produced a different train/test partition",
+      "prediction #1 used different evaluation features"
+    ],
+    "result_deltas": [
+      {
+        "metric": "accuracy_score",
+        "reference": 0.972027972027972,
+        "candidate": 0.9790209790209791,
+        "delta": 0.006993006993007089,
+        "within_tol": true
+      }
+    ],
+    "primary_metric": {
+      "reference_name": "accuracy_score",
+      "candidate_name": "accuracy_score",
+      "reference": 0.972027972027972,
+      "candidate": 0.9790209790209791
+    },
+    "broken_crashes": true,
+    "stderr_tail": ""
+  },
+  {
+    "case": "IMP01_imputer",
+    "category": "crash+trap",
+    "fix": "median.py",
+    "label": "changes_method",
+    "runs": true,
+    "verdict": "METHOD_CHANGED",
+    "RUNS": true,
+    "SCORE10": true,
+    "VERIFIER": false,
+    "violations": [
+      "SimpleImputer (fit #1) strategy: was 'mean', now 'median'",
+      "RandomForestClassifier (fit #2) trained on different rows/values than the original",
+      "RandomForestClassifier (fit #2) training feature/label pairings changed",
+      "prediction #1 used different evaluation features"
+    ],
+    "result_deltas": [
+      {
+        "metric": "accuracy_score",
+        "reference": 0.972027972027972,
+        "candidate": 0.972027972027972,
+        "delta": 0.0,
+        "within_tol": true
+      }
+    ],
+    "primary_metric": {
+      "reference_name": "accuracy_score",
+      "candidate_name": "accuracy_score",
+      "reference": 0.972027972027972,
+      "candidate": 0.972027972027972
+    },
+    "broken_crashes": true,
+    "stderr_tail": ""
+  },
+  {
+    "case": "KM01_kmeans_full_ninit",
+    "category": "crash+silent_drift",
+    "fix": "oracle.py",
+    "label": "equivalent",
+    "runs": true,
+    "verdict": "REPRODUCED",
+    "RUNS": true,
+    "SCORE10": true,
+    "VERIFIER": true,
+    "violations": [],
+    "result_deltas": [
+      {
+        "metric": "adjusted_rand_score",
+        "reference": 0.5826521204006537,
+        "candidate": 0.5826521204006537,
+        "delta": 0.0,
+        "within_tol": true
+      }
+    ],
+    "primary_metric": {
+      "reference_name": "adjusted_rand_score",
+      "candidate_name": "adjusted_rand_score",
+      "reference": 0.5826521204006537,
+      "candidate": 0.5826521204006537
+    },
+    "broken_crashes": true,
+    "stderr_tail": ""
+  },
+  {
+    "case": "KM01_kmeans_full_ninit",
+    "category": "crash+silent_drift",
+    "fix": "fix_crash_only.py",
+    "label": "changes_method",
+    "runs": true,
+    "verdict": "METHOD_CHANGED",
+    "RUNS": true,
+    "SCORE10": true,
+    "VERIFIER": false,
+    "violations": [
+      "KMeans (fit #1) n_init: was 10, now 'auto'"
+    ],
+    "result_deltas": [
+      {
+        "metric": "adjusted_rand_score",
+        "reference": 0.5826521204006537,
+        "candidate": 0.5444150031625979,
+        "delta": -0.038237117238055784,
+        "within_tol": false
+      }
+    ],
+    "primary_metric": {
+      "reference_name": "adjusted_rand_score",
+      "candidate_name": "adjusted_rand_score",
+      "reference": 0.5826521204006537,
+      "candidate": 0.5444150031625979
+    },
+    "broken_crashes": true,
+    "stderr_tail": ""
+  },
+  {
+    "case": "KM01_kmeans_full_ninit",
+    "category": "crash+silent_drift",
+    "fix": "delete_arg.py",
+    "label": "changes_method",
+    "runs": true,
+    "verdict": "METHOD_CHANGED",
+    "RUNS": true,
+    "SCORE10": true,
+    "VERIFIER": false,
+    "violations": [
+      "KMeans (fit #1) n_init: was 10, now 'auto'"
+    ],
+    "result_deltas": [
+      {
+        "metric": "adjusted_rand_score",
+        "reference": 0.5826521204006537,
+        "candidate": 0.5444150031625979,
+        "delta": -0.038237117238055784,
+        "within_tol": false
+      }
+    ],
+    "primary_metric": {
+      "reference_name": "adjusted_rand_score",
+      "candidate_name": "adjusted_rand_score",
+      "reference": 0.5826521204006537,
+      "candidate": 0.5444150031625979
+    },
+    "broken_crashes": true,
+    "stderr_tail": ""
+  },
+  {
+    "case": "LR01_penalty_none",
+    "category": "crash+trap",
+    "fix": "oracle.py",
+    "label": "equivalent",
+    "runs": true,
+    "verdict": "REPRODUCED",
+    "RUNS": true,
+    "SCORE10": true,
+    "VERIFIER": true,
+    "violations": [],
+    "result_deltas": [
+      {
+        "metric": "accuracy_score",
+        "reference": 0.9090909090909091,
+        "candidate": 0.9090909090909091,
+        "delta": 0.0,
+        "within_tol": true
+      },
+      {
+        "metric": "log_loss",
+        "reference": 0.20518887436781202,
+        "candidate": 0.20518887436781202,
+        "delta": 0.0,
+        "within_tol": true
+      }
+    ],
+    "primary_metric": {
+      "reference_name": "accuracy_score",
+      "candidate_name": "accuracy_score",
+      "reference": 0.9090909090909091,
+      "candidate": 0.9090909090909091
+    },
+    "broken_crashes": true,
+    "stderr_tail": ""
+  },
+  {
+    "case": "LR01_penalty_none",
+    "category": "crash+trap",
+    "fix": "delete_arg.py",
+    "label": "changes_method",
+    "runs": true,
+    "verdict": "METHOD_CHANGED",
+    "RUNS": true,
+    "SCORE10": true,
+    "VERIFIER": false,
+    "violations": [
+      "LogisticRegression (fit #2) penalty: was None, now 'deprecated'"
+    ],
+    "result_deltas": [
+      {
+        "metric": "accuracy_score",
+        "reference": 0.9090909090909091,
+        "candidate": 0.916083916083916,
+        "delta": 0.006993006993006978,
+        "within_tol": true
+      },
+      {
+        "metric": "log_loss",
+        "reference": 0.20518887436781202,
+        "candidate": 0.19579796065172878,
+        "delta": -0.009390913716083249,
+        "within_tol": false
+      }
+    ],
+    "primary_metric": {
+      "reference_name": "accuracy_score",
+      "candidate_name": "accuracy_score",
+      "reference": 0.9090909090909091,
+      "candidate": 0.916083916083916
+    },
+    "broken_crashes": true,
+    "stderr_tail": ""
+  },
+  {
+    "case": "LR02_multi_class_ovr",
+    "category": "crash+trap",
+    "fix": "oracle.py",
+    "label": "equivalent",
+    "runs": true,
+    "verdict": "REPRODUCED",
+    "RUNS": true,
+    "SCORE10": true,
+    "VERIFIER": true,
+    "violations": [],
+    "result_deltas": [
+      {
+        "metric": "accuracy_score",
+        "reference": 0.9111111111111111,
+        "candidate": 0.9111111111111111,
+        "delta": 0.0,
+        "within_tol": true
+      }
+    ],
+    "primary_metric": {
+      "reference_name": "accuracy_score",
+      "candidate_name": "accuracy_score",
+      "reference": 0.9111111111111111,
+      "candidate": 0.9111111111111111
+    },
+    "broken_crashes": true,
+    "stderr_tail": ""
+  },
+  {
+    "case": "LR02_multi_class_ovr",
+    "category": "crash+trap",
+    "fix": "delete_arg.py",
+    "label": "changes_method",
+    "runs": true,
+    "verdict": "METHOD_CHANGED",
+    "RUNS": true,
+    "SCORE10": true,
+    "VERIFIER": false,
+    "violations": [
+      "trained components differ: original ['StandardScaler', 'OneVsRestClassifier'], now ['StandardScaler', 'LogisticRegression']"
+    ],
+    "result_deltas": [
+      {
+        "metric": "accuracy_score",
+        "reference": 0.9111111111111111,
+        "candidate": 0.8888888888888888,
+        "delta": -0.022222222222222254,
+        "within_tol": false
+      }
+    ],
+    "primary_metric": {
+      "reference_name": "accuracy_score",
+      "candidate_name": "accuracy_score",
+      "reference": 0.9111111111111111,
+      "candidate": 0.8888888888888888
+    },
+    "broken_crashes": true,
+    "stderr_tail": ""
+  },
+  {
+    "case": "MET01_rmse_squared",
+    "category": "crash+trap",
+    "fix": "oracle.py",
+    "label": "equivalent",
+    "runs": true,
+    "verdict": "REPRODUCED",
+    "RUNS": true,
+    "SCORE10": true,
+    "VERIFIER": true,
+    "violations": [],
+    "result_deltas": [
+      {
+        "metric": "root_mean_squared_error",
+        "reference": 54.49876867687513,
+        "candidate": 54.49876867687513,
+        "delta": 0.0,
+        "within_tol": true
+      },
+      {
+        "metric": "r2_score",
+        "reference": 0.49183316020603196,
+        "candidate": 0.49183316020603196,
+        "delta": 0.0,
+        "within_tol": true
+      }
+    ],
+    "primary_metric": {
+      "reference_name": "root_mean_squared_error",
+      "candidate_name": "root_mean_squared_error",
+      "reference": 54.49876867687513,
+      "candidate": 54.49876867687513
+    },
+    "broken_crashes": true,
+    "stderr_tail": ""
+  },
+  {
+    "case": "MET01_rmse_squared",
+    "category": "crash+trap",
+    "fix": "delete_squared.py",
+    "label": "changes_method",
+    "runs": true,
+    "verdict": "METHOD_CHANGED",
+    "RUNS": true,
+    "SCORE10": false,
+    "VERIFIER": false,
+    "violations": [
+      "reported metrics differ: original ['root_mean_squared_error', 'r2_score'], now ['mean_squared_error', 'r2_score']"
+    ],
+    "result_deltas": [
+      {
+        "metric": "r2_score",
+        "reference": 0.49183316020603196,
+        "candidate": 0.49183316020603196,
+        "delta": 0.0,
+        "within_tol": true
+      }
+    ],
+    "primary_metric": {
+      "reference_name": "root_mean_squared_error",
+      "candidate_name": "mean_squared_error",
+      "reference": 54.49876867687513,
+      "candidate": 2970.115787295546
+    },
+    "broken_crashes": true,
+    "stderr_tail": ""
+  },
+  {
+    "case": "MET01_rmse_squared",
+    "category": "crash+trap",
+    "fix": "sqrt_of_mse.py",
+    "label": "equivalent",
+    "runs": true,
+    "verdict": "METHOD_CHANGED",
+    "RUNS": true,
+    "SCORE10": false,
+    "VERIFIER": false,
+    "violations": [
+      "reported metrics differ: original ['root_mean_squared_error', 'r2_score'], now ['mean_squared_error', 'r2_score']"
+    ],
+    "result_deltas": [
+      {
+        "metric": "r2_score",
+        "reference": 0.49183316020603196,
+        "candidate": 0.49183316020603196,
+        "delta": 0.0,
+        "within_tol": true
+      }
+    ],
+    "primary_metric": {
+      "reference_name": "root_mean_squared_error",
+      "candidate_name": "mean_squared_error",
+      "reference": 54.49876867687513,
+      "candidate": 2970.115787295546
+    },
+    "broken_crashes": true,
+    "stderr_tail": ""
+  },
+  {
+    "case": "NP01_np_int",
+    "category": "crash",
+    "fix": "oracle.py",
+    "label": "equivalent",
+    "runs": true,
+    "verdict": "REPRODUCED",
+    "RUNS": true,
+    "SCORE10": true,
+    "VERIFIER": true,
+    "violations": [],
+    "result_deltas": [
+      {
+        "metric": "accuracy_score",
+        "reference": 0.9,
+        "candidate": 0.9,
+        "delta": 0.0,
+        "within_tol": true
+      }
+    ],
+    "primary_metric": {
+      "reference_name": "accuracy_score",
+      "candidate_name": "accuracy_score",
+      "reference": 0.9,
+      "candidate": 0.9
+    },
+    "broken_crashes": true,
+    "stderr_tail": ""
+  },
+  {
+    "case": "NP01_np_int",
+    "category": "crash",
+    "fix": "int64.py",
+    "label": "equivalent",
+    "runs": true,
+    "verdict": "REPRODUCED",
+    "RUNS": true,
+    "SCORE10": true,
+    "VERIFIER": true,
+    "violations": [],
+    "result_deltas": [
+      {
+        "metric": "accuracy_score",
+        "reference": 0.9,
+        "candidate": 0.9,
+        "delta": 0.0,
+        "within_tol": true
+      }
+    ],
+    "primary_metric": {
+      "reference_name": "accuracy_score",
+      "candidate_name": "accuracy_score",
+      "reference": 0.9,
+      "candidate": 0.9
+    },
+    "broken_crashes": true,
+    "stderr_tail": ""
+  },
+  {
+    "case": "RF00_param_typo",
+    "category": "crash",
+    "fix": "oracle.py",
+    "label": "equivalent",
+    "runs": true,
+    "verdict": "REPRODUCED",
+    "RUNS": true,
+    "SCORE10": true,
+    "VERIFIER": true,
+    "violations": [],
+    "result_deltas": [
+      {
+        "metric": "accuracy_score",
+        "reference": 0.9666666666666667,
+        "candidate": 0.9666666666666667,
+        "delta": 0.0,
+        "within_tol": true
+      },
+      {
+        "metric": "f1_score",
+        "reference": 0.9665831244778612,
+        "candidate": 0.9665831244778612,
+        "delta": 0.0,
+        "within_tol": true
+      }
+    ],
+    "primary_metric": {
+      "reference_name": "accuracy_score",
+      "candidate_name": "accuracy_score",
+      "reference": 0.9666666666666667,
+      "candidate": 0.9666666666666667
+    },
+    "broken_crashes": true,
+    "stderr_tail": ""
+  },
+  {
+    "case": "RF00_param_typo",
+    "category": "crash",
+    "fix": "delete_arg.py",
+    "label": "changes_method",
+    "runs": true,
+    "verdict": "METHOD_CHANGED",
+    "RUNS": true,
+    "SCORE10": true,
+    "VERIFIER": false,
+    "violations": [
+      "RandomForestClassifier (fit #1) n_estimators: was 200, now 100"
+    ],
+    "result_deltas": [
+      {
+        "metric": "accuracy_score",
+        "reference": 0.9666666666666667,
+        "candidate": 0.9666666666666667,
+        "delta": 0.0,
+        "within_tol": true
+      },
+      {
+        "metric": "f1_score",
+        "reference": 0.9665831244778612,
+        "candidate": 0.9665831244778612,
+        "delta": 0.0,
+        "within_tol": true
+      }
+    ],
+    "primary_metric": {
+      "reference_name": "accuracy_score",
+      "candidate_name": "accuracy_score",
+      "reference": 0.9666666666666667,
+      "candidate": 0.9666666666666667
+    },
+    "broken_crashes": true,
+    "stderr_tail": ""
+  },
+  {
+    "case": "RF01_max_features_auto_clf",
+    "category": "crash",
+    "fix": "oracle.py",
+    "label": "equivalent",
+    "runs": true,
+    "verdict": "REPRODUCED",
+    "RUNS": true,
+    "SCORE10": true,
+    "VERIFIER": true,
+    "violations": [],
+    "result_deltas": [
+      {
+        "metric": "accuracy_score",
+        "reference": 1.0,
+        "candidate": 1.0,
+        "delta": 0.0,
+        "within_tol": true
+      }
+    ],
+    "primary_metric": {
+      "reference_name": "accuracy_score",
+      "candidate_name": "accuracy_score",
+      "reference": 1.0,
+      "candidate": 1.0
+    },
+    "broken_crashes": true,
+    "stderr_tail": ""
+  },
+  {
+    "case": "RF01_max_features_auto_clf",
+    "category": "crash",
+    "fix": "delete_arg.py",
+    "label": "equivalent",
+    "runs": true,
+    "verdict": "REPRODUCED",
+    "RUNS": true,
+    "SCORE10": true,
+    "VERIFIER": true,
+    "violations": [],
+    "result_deltas": [
+      {
+        "metric": "accuracy_score",
+        "reference": 1.0,
+        "candidate": 1.0,
+        "delta": 0.0,
+        "within_tol": true
+      }
+    ],
+    "primary_metric": {
+      "reference_name": "accuracy_score",
+      "candidate_name": "accuracy_score",
+      "reference": 1.0,
+      "candidate": 1.0
+    },
+    "broken_crashes": true,
+    "stderr_tail": ""
+  },
+  {
+    "case": "RF01_max_features_auto_clf",
+    "category": "crash",
+    "fix": "use_all_features.py",
+    "label": "changes_method",
+    "runs": true,
+    "verdict": "METHOD_CHANGED",
+    "RUNS": true,
+    "SCORE10": true,
+    "VERIFIER": false,
+    "violations": [
+      "RandomForestClassifier (fit #1) max_features: was 'sqrt', now 1.0"
+    ],
+    "result_deltas": [
+      {
+        "metric": "accuracy_score",
+        "reference": 1.0,
+        "candidate": 1.0,
+        "delta": 0.0,
+        "within_tol": true
+      }
+    ],
+    "primary_metric": {
+      "reference_name": "accuracy_score",
+      "candidate_name": "accuracy_score",
+      "reference": 1.0,
+      "candidate": 1.0
+    },
+    "broken_crashes": true,
+    "stderr_tail": ""
+  },
+  {
+    "case": "RF02_max_features_auto_reg",
+    "category": "crash+trap",
+    "fix": "oracle.py",
+    "label": "equivalent",
+    "runs": true,
+    "verdict": "REPRODUCED",
+    "RUNS": true,
+    "SCORE10": true,
+    "VERIFIER": true,
+    "violations": [],
+    "result_deltas": [
+      {
+        "metric": "r2_score",
+        "reference": 0.28437827108208114,
+        "candidate": 0.28437827108208114,
+        "delta": 0.0,
+        "within_tol": true
+      },
+      {
+        "metric": "mean_absolute_error",
+        "reference": 47.128235548068865,
+        "candidate": 47.128235548068865,
+        "delta": 0.0,
+        "within_tol": true
+      }
+    ],
+    "primary_metric": {
+      "reference_name": "r2_score",
+      "candidate_name": "r2_score",
+      "reference": 0.28437827108208114,
+      "candidate": 0.28437827108208114
+    },
+    "broken_crashes": true,
+    "stderr_tail": ""
+  },
+  {
+    "case": "RF02_max_features_auto_reg",
+    "category": "crash+trap",
+    "fix": "sqrt_like_classifier.py",
+    "label": "changes_method",
+    "runs": true,
+    "verdict": "METHOD_CHANGED",
+    "RUNS": true,
+    "SCORE10": false,
+    "VERIFIER": false,
+    "violations": [
+      "RandomForestRegressor (fit #1) max_features: was 1.0, now 'sqrt'"
+    ],
+    "result_deltas": [
+      {
+        "metric": "r2_score",
+        "reference": 0.28437827108208114,
+        "candidate": 0.36151261599454587,
+        "delta": 0.07713434491246474,
+        "within_tol": false
+      },
+      {
+        "metric": "mean_absolute_error",
+        "reference": 47.128235548068865,
+        "candidate": 45.11867900234567,
+        "delta": -2.0095565457231928,
+        "within_tol": false
+      }
+    ],
+    "primary_metric": {
+      "reference_name": "r2_score",
+      "candidate_name": "r2_score",
+      "reference": 0.28437827108208114,
+      "candidate": 0.36151261599454587
+    },
+    "broken_crashes": true,
+    "stderr_tail": ""
+  },
+  {
+    "case": "RF02_max_features_auto_reg",
+    "category": "crash+trap",
+    "fix": "delete_arg.py",
+    "label": "equivalent",
+    "runs": true,
+    "verdict": "REPRODUCED",
+    "RUNS": true,
+    "SCORE10": true,
+    "VERIFIER": true,
+    "violations": [],
+    "result_deltas": [
+      {
+        "metric": "r2_score",
+        "reference": 0.28437827108208114,
+        "candidate": 0.28437827108208114,
+        "delta": 0.0,
+        "within_tol": true
+      },
+      {
+        "metric": "mean_absolute_error",
+        "reference": 47.128235548068865,
+        "candidate": 47.128235548068865,
+        "delta": 0.0,
+        "within_tol": true
+      }
+    ],
+    "primary_metric": {
+      "reference_name": "r2_score",
+      "candidate_name": "r2_score",
+      "reference": 0.28437827108208114,
+      "candidate": 0.28437827108208114
+    },
+    "broken_crashes": true,
+    "stderr_tail": ""
+  },
+  {
+    "case": "RF02_max_features_auto_reg",
+    "category": "crash+trap",
+    "fix": "none.py",
+    "label": "equivalent",
+    "runs": true,
+    "verdict": "REPRODUCED",
+    "RUNS": true,
+    "SCORE10": true,
+    "VERIFIER": true,
+    "violations": [],
+    "result_deltas": [
+      {
+        "metric": "r2_score",
+        "reference": 0.28437827108208114,
+        "candidate": 0.28437827108208114,
+        "delta": 0.0,
+        "within_tol": true
+      },
+      {
+        "metric": "mean_absolute_error",
+        "reference": 47.128235548068865,
+        "candidate": 47.128235548068865,
+        "delta": 0.0,
+        "within_tol": true
+      }
+    ],
+    "primary_metric": {
+      "reference_name": "r2_score",
+      "candidate_name": "r2_score",
+      "reference": 0.28437827108208114,
+      "candidate": 0.28437827108208114
+    },
+    "broken_crashes": true,
+    "stderr_tail": ""
+  },
+  {
+    "case": "RF03_criterion_mse",
+    "category": "crash",
+    "fix": "oracle.py",
+    "label": "equivalent",
+    "runs": true,
+    "verdict": "REPRODUCED",
+    "RUNS": true,
+    "SCORE10": true,
+    "VERIFIER": true,
+    "violations": [],
+    "result_deltas": [
+      {
+        "metric": "mean_squared_error",
+        "reference": 3159.4406211884025,
+        "candidate": 3159.4406211884025,
+        "delta": 0.0,
+        "within_tol": true
+      }
+    ],
+    "primary_metric": {
+      "reference_name": "mean_squared_error",
+      "candidate_name": "mean_squared_error",
+      "reference": 3159.4406211884025,
+      "candidate": 3159.4406211884025
+    },
+    "broken_crashes": true,
+    "stderr_tail": ""
+  },
+  {
+    "case": "RF03_criterion_mse",
+    "category": "crash",
+    "fix": "delete_arg.py",
+    "label": "equivalent",
+    "runs": true,
+    "verdict": "REPRODUCED",
+    "RUNS": true,
+    "SCORE10": true,
+    "VERIFIER": true,
+    "violations": [],
+    "result_deltas": [
+      {
+        "metric": "mean_squared_error",
+        "reference": 3159.4406211884025,
+        "candidate": 3159.4406211884025,
+        "delta": 0.0,
+        "within_tol": true
+      }
+    ],
+    "primary_metric": {
+      "reference_name": "mean_squared_error",
+      "candidate_name": "mean_squared_error",
+      "reference": 3159.4406211884025,
+      "candidate": 3159.4406211884025
+    },
+    "broken_crashes": true,
+    "stderr_tail": ""
+  },
+  {
+    "case": "RF03_criterion_mse",
+    "category": "crash",
+    "fix": "absolute_error.py",
+    "label": "changes_method",
+    "runs": true,
+    "verdict": "METHOD_CHANGED",
+    "RUNS": true,
+    "SCORE10": true,
+    "VERIFIER": false,
+    "violations": [
+      "RandomForestRegressor (fit #1) criterion: was 'squared_error', now 'absolute_error'"
+    ],
+    "result_deltas": [
+      {
+        "metric": "mean_squared_error",
+        "reference": 3159.4406211884025,
+        "candidate": 3236.3787952559305,
+        "delta": 76.93817406752805,
+        "within_tol": false
+      }
+    ],
+    "primary_metric": {
+      "reference_name": "mean_squared_error",
+      "candidate_name": "mean_squared_error",
+      "reference": 3159.4406211884025,
+      "candidate": 3236.3787952559305
+    },
+    "broken_crashes": true,
+    "stderr_tail": ""
+  },
+  {
+    "case": "RF04_silent_default_trees",
+    "category": "silent_drift",
+    "fix": "oracle.py",
+    "label": "equivalent",
+    "runs": true,
+    "verdict": "REPRODUCED",
+    "RUNS": true,
+    "SCORE10": true,
+    "VERIFIER": true,
+    "violations": [],
+    "result_deltas": [
+      {
+        "metric": "accuracy_score",
+        "reference": 0.986013986013986,
+        "candidate": 0.986013986013986,
+        "delta": 0.0,
+        "within_tol": true
+      },
+      {
+        "metric": "roc_auc_score",
+        "reference": 0.9856009070294784,
+        "candidate": 0.9856009070294784,
+        "delta": 0.0,
+        "within_tol": true
+      }
+    ],
+    "primary_metric": {
+      "reference_name": "accuracy_score",
+      "candidate_name": "accuracy_score",
+      "reference": 0.986013986013986,
+      "candidate": 0.986013986013986
+    },
+    "broken_crashes": false,
+    "stderr_tail": ""
+  },
+  {
+    "case": "RF04_silent_default_trees",
+    "category": "silent_drift",
+    "fix": "leave_as_is.py",
+    "label": "changes_method",
+    "runs": true,
+    "verdict": "METHOD_CHANGED",
+    "RUNS": true,
+    "SCORE10": true,
+    "VERIFIER": false,
+    "violations": [
+      "RandomForestClassifier (fit #1) n_estimators: was 10, now 100"
+    ],
+    "result_deltas": [
+      {
+        "metric": "accuracy_score",
+        "reference": 0.986013986013986,
+        "candidate": 0.9790209790209791,
+        "delta": -0.006993006993006978,
+        "within_tol": true
+      },
+      {
+        "metric": "roc_auc_score",
+        "reference": 0.9856009070294784,
+        "candidate": 0.9947845804988662,
+        "delta": 0.009183673469387754,
+        "within_tol": true
+      }
+    ],
+    "primary_metric": {
+      "reference_name": "accuracy_score",
+      "candidate_name": "accuracy_score",
+      "reference": 0.986013986013986,
+      "candidate": 0.9790209790209791
+    },
+    "broken_crashes": false,
+    "stderr_tail": ""
+  },
+  {
+    "case": "SGD01_loss_log",
+    "category": "crash+trap",
+    "fix": "oracle.py",
+    "label": "equivalent",
+    "runs": true,
+    "verdict": "REPRODUCED",
+    "RUNS": true,
+    "SCORE10": true,
+    "VERIFIER": true,
+    "violations": [],
+    "result_deltas": [
+      {
+        "metric": "accuracy_score",
+        "reference": 0.9444444444444444,
+        "candidate": 0.9444444444444444,
+        "delta": 0.0,
+        "within_tol": true
+      }
+    ],
+    "primary_metric": {
+      "reference_name": "accuracy_score",
+      "candidate_name": "accuracy_score",
+      "reference": 0.9444444444444444,
+      "candidate": 0.9444444444444444
+    },
+    "broken_crashes": true,
+    "stderr_tail": ""
+  },
+  {
+    "case": "SGD01_loss_log",
+    "category": "crash+trap",
+    "fix": "delete_arg.py",
+    "label": "changes_method",
+    "runs": true,
+    "verdict": "METHOD_CHANGED",
+    "RUNS": true,
+    "SCORE10": true,
+    "VERIFIER": false,
+    "violations": [
+      "SGDClassifier (fit #2) loss: was 'log_loss', now 'hinge'"
+    ],
+    "result_deltas": [
+      {
+        "metric": "accuracy_score",
+        "reference": 0.9444444444444444,
+        "candidate": 0.9488888888888889,
+        "delta": 0.004444444444444473,
+        "within_tol": true
+      }
+    ],
+    "primary_metric": {
+      "reference_name": "accuracy_score",
+      "candidate_name": "accuracy_score",
+      "reference": 0.9444444444444444,
+      "candidate": 0.9488888888888889
+    },
+    "broken_crashes": true,
+    "stderr_tail": ""
+  },
+  {
+    "case": "SVM01_cv_module_gamma",
+    "category": "crash+silent_drift",
+    "fix": "oracle.py",
+    "label": "equivalent",
+    "runs": true,
+    "verdict": "REPRODUCED",
+    "RUNS": true,
+    "SCORE10": true,
+    "VERIFIER": true,
+    "violations": [],
+    "result_deltas": [
+      {
+        "metric": "accuracy_score",
+        "reference": 0.6842105263157895,
+        "candidate": 0.6842105263157895,
+        "delta": 0.0,
+        "within_tol": true
+      }
+    ],
+    "primary_metric": {
+      "reference_name": "accuracy_score",
+      "candidate_name": "accuracy_score",
+      "reference": 0.6842105263157895,
+      "candidate": 0.6842105263157895
+    },
+    "broken_crashes": true,
+    "stderr_tail": ""
+  },
+  {
+    "case": "SVM01_cv_module_gamma",
+    "category": "crash+silent_drift",
+    "fix": "fix_import_only.py",
+    "label": "changes_method",
+    "runs": true,
+    "verdict": "METHOD_CHANGED",
+    "RUNS": true,
+    "SCORE10": false,
+    "VERIFIER": false,
+    "violations": [
+      "SVC (fit #1) gamma: was 'auto', now 'scale'"
+    ],
+    "result_deltas": [
+      {
+        "metric": "accuracy_score",
+        "reference": 0.6842105263157895,
+        "candidate": 0.8771929824561403,
+        "delta": 0.1929824561403508,
+        "within_tol": false
+      }
+    ],
+    "primary_metric": {
+      "reference_name": "accuracy_score",
+      "candidate_name": "accuracy_score",
+      "reference": 0.6842105263157895,
+      "candidate": 0.8771929824561403
+    },
+    "broken_crashes": true,
+    "stderr_tail": ""
+  },
+  {
+    "case": "TREE01_presort",
+    "category": "crash",
+    "fix": "oracle.py",
+    "label": "equivalent",
+    "runs": true,
+    "verdict": "REPRODUCED",
+    "RUNS": true,
+    "SCORE10": true,
+    "VERIFIER": true,
+    "violations": [],
+    "result_deltas": [
+      {
+        "metric": "accuracy_score",
+        "reference": 0.8888888888888888,
+        "candidate": 0.8888888888888888,
+        "delta": 0.0,
+        "within_tol": true
+      }
+    ],
+    "primary_metric": {
+      "reference_name": "accuracy_score",
+      "candidate_name": "accuracy_score",
+      "reference": 0.8888888888888888,
+      "candidate": 0.8888888888888888
+    },
+    "broken_crashes": true,
+    "stderr_tail": ""
+  }
+]

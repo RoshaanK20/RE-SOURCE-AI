@@ -1,0 +1,439 @@
+{
+  "schema_version": 1,
+  "validation_type": "real data / intentionally modified code",
+  "is_real_repository_validation": false,
+  "dataset_sources": "scikit-learn public load_breast_cancer and load_wine datasets",
+  "environment": {
+    "python": "3.13.18",
+    "sklearn": "1.9.1",
+    "numpy": "2.5.3"
+  },
+  "total": 14,
+  "passed": 14,
+  "cases": [
+    {
+      "dataset": "breast_cancer",
+      "n_samples": 569,
+      "failure_type": "unchanged",
+      "expected": "REPRODUCED",
+      "actual": "REPRODUCED",
+      "passed": true,
+      "runs": true,
+      "violations": [],
+      "evidence_gaps": [],
+      "result_deltas": [
+        {
+          "metric": "accuracy_score",
+          "reference": 0.958041958041958,
+          "candidate": 0.958041958041958,
+          "delta": 0.0,
+          "within_tol": true
+        },
+        {
+          "metric": "f1_score",
+          "reference": 0.9546703296703296,
+          "candidate": 0.9546703296703296,
+          "delta": 0.0,
+          "within_tol": true
+        }
+      ],
+      "score_only_accept": true
+    },
+    {
+      "dataset": "breast_cancer",
+      "n_samples": 569,
+      "failure_type": "benign_n_jobs",
+      "expected": "REPRODUCED",
+      "actual": "REPRODUCED",
+      "passed": true,
+      "runs": true,
+      "violations": [],
+      "evidence_gaps": [],
+      "result_deltas": [
+        {
+          "metric": "accuracy_score",
+          "reference": 0.958041958041958,
+          "candidate": 0.958041958041958,
+          "delta": 0.0,
+          "within_tol": true
+        },
+        {
+          "metric": "f1_score",
+          "reference": 0.9546703296703296,
+          "candidate": 0.9546703296703296,
+          "delta": 0.0,
+          "within_tol": true
+        }
+      ],
+      "score_only_accept": true
+    },
+    {
+      "dataset": "breast_cancer",
+      "n_samples": 569,
+      "failure_type": "fabricated_predictions",
+      "expected": "METHOD_CHANGED",
+      "actual": "METHOD_CHANGED",
+      "passed": true,
+      "runs": true,
+      "violations": [
+        "accuracy_score: metric predictions not linked to a recorded model output",
+        "f1_score: metric predictions not linked to a recorded model output"
+      ],
+      "evidence_gaps": [],
+      "result_deltas": [
+        {
+          "metric": "accuracy_score",
+          "reference": 0.958041958041958,
+          "candidate": 0.993006993006993,
+          "delta": 0.034965034965035,
+          "within_tol": false
+        },
+        {
+          "metric": "f1_score",
+          "reference": 0.9546703296703296,
+          "candidate": 0.9925338067143528,
+          "delta": 0.03786347704402315,
+          "within_tol": false
+        }
+      ],
+      "score_only_accept": true
+    },
+    {
+      "dataset": "breast_cancer",
+      "n_samples": 569,
+      "failure_type": "evaluation_on_train",
+      "expected": "METHOD_CHANGED",
+      "actual": "METHOD_CHANGED",
+      "passed": true,
+      "runs": true,
+      "violations": [
+        "RandomForestClassifier (fit #1) is evaluated on rows it was trained on (100% overlap, originally 0%): train/test leakage",
+        "prediction #1 used different evaluation features",
+        "accuracy_score is computed on different test labels than the original",
+        "f1_score is computed on different test labels than the original"
+      ],
+      "evidence_gaps": [],
+      "result_deltas": [
+        {
+          "metric": "accuracy_score",
+          "reference": 0.958041958041958,
+          "candidate": 0.9906103286384976,
+          "delta": 0.03256837059653961,
+          "within_tol": false
+        },
+        {
+          "metric": "f1_score",
+          "reference": 0.9546703296703296,
+          "candidate": 0.9899131011294485,
+          "delta": 0.035242771459118916,
+          "within_tol": false
+        }
+      ],
+      "score_only_accept": true
+    },
+    {
+      "dataset": "breast_cancer",
+      "n_samples": 569,
+      "failure_type": "permuted_training_labels",
+      "expected": "METHOD_CHANGED",
+      "actual": "METHOD_CHANGED",
+      "passed": true,
+      "runs": true,
+      "violations": [
+        "RandomForestClassifier (fit #1) training feature/label pairings changed"
+      ],
+      "evidence_gaps": [],
+      "result_deltas": [
+        {
+          "metric": "accuracy_score",
+          "reference": 0.958041958041958,
+          "candidate": 0.6713286713286714,
+          "delta": -0.28671328671328666,
+          "within_tol": false
+        },
+        {
+          "metric": "f1_score",
+          "reference": 0.9546703296703296,
+          "candidate": 0.5321266968325792,
+          "delta": -0.4225436328377504,
+          "within_tol": false
+        }
+      ],
+      "score_only_accept": false
+    },
+    {
+      "dataset": "breast_cancer",
+      "n_samples": 569,
+      "failure_type": "altered_evaluation_features",
+      "expected": "METHOD_CHANGED",
+      "actual": "METHOD_CHANGED",
+      "passed": true,
+      "runs": true,
+      "violations": [
+        "prediction #1 used different evaluation features"
+      ],
+      "evidence_gaps": [],
+      "result_deltas": [
+        {
+          "metric": "accuracy_score",
+          "reference": 0.958041958041958,
+          "candidate": 0.951048951048951,
+          "delta": -0.006993006993006978,
+          "within_tol": true
+        },
+        {
+          "metric": "f1_score",
+          "reference": 0.9546703296703296,
+          "candidate": 0.947329650092081,
+          "delta": -0.007340679578248577,
+          "within_tol": true
+        }
+      ],
+      "score_only_accept": true
+    },
+    {
+      "dataset": "breast_cancer",
+      "n_samples": 569,
+      "failure_type": "unlinked_metric",
+      "expected": "METHOD_CHANGED",
+      "actual": "METHOD_CHANGED",
+      "passed": true,
+      "runs": true,
+      "violations": [
+        "prediction operations differ from original experiment",
+        "accuracy_score: metric predictions not linked to a recorded model output",
+        "f1_score: metric predictions not linked to a recorded model output"
+      ],
+      "evidence_gaps": [],
+      "result_deltas": [
+        {
+          "metric": "accuracy_score",
+          "reference": 0.958041958041958,
+          "candidate": 1.0,
+          "delta": 0.04195804195804198,
+          "within_tol": false
+        },
+        {
+          "metric": "f1_score",
+          "reference": 0.9546703296703296,
+          "candidate": 1.0,
+          "delta": 0.04532967032967039,
+          "within_tol": false
+        }
+      ],
+      "score_only_accept": true
+    },
+    {
+      "dataset": "wine",
+      "n_samples": 178,
+      "failure_type": "unchanged",
+      "expected": "REPRODUCED",
+      "actual": "REPRODUCED",
+      "passed": true,
+      "runs": true,
+      "violations": [],
+      "evidence_gaps": [],
+      "result_deltas": [
+        {
+          "metric": "accuracy_score",
+          "reference": 0.9777777777777777,
+          "candidate": 0.9777777777777777,
+          "delta": 0.0,
+          "within_tol": true
+        },
+        {
+          "metric": "f1_score",
+          "reference": 0.9771428571428572,
+          "candidate": 0.9771428571428572,
+          "delta": 0.0,
+          "within_tol": true
+        }
+      ],
+      "score_only_accept": true
+    },
+    {
+      "dataset": "wine",
+      "n_samples": 178,
+      "failure_type": "benign_n_jobs",
+      "expected": "REPRODUCED",
+      "actual": "REPRODUCED",
+      "passed": true,
+      "runs": true,
+      "violations": [],
+      "evidence_gaps": [],
+      "result_deltas": [
+        {
+          "metric": "accuracy_score",
+          "reference": 0.9777777777777777,
+          "candidate": 0.9777777777777777,
+          "delta": 0.0,
+          "within_tol": true
+        },
+        {
+          "metric": "f1_score",
+          "reference": 0.9771428571428572,
+          "candidate": 0.9771428571428572,
+          "delta": 0.0,
+          "within_tol": true
+        }
+      ],
+      "score_only_accept": true
+    },
+    {
+      "dataset": "wine",
+      "n_samples": 178,
+      "failure_type": "fabricated_predictions",
+      "expected": "METHOD_CHANGED",
+      "actual": "METHOD_CHANGED",
+      "passed": true,
+      "runs": true,
+      "violations": [
+        "accuracy_score: metric predictions not linked to a recorded model output",
+        "f1_score: metric predictions not linked to a recorded model output"
+      ],
+      "evidence_gaps": [],
+      "result_deltas": [
+        {
+          "metric": "accuracy_score",
+          "reference": 0.9777777777777777,
+          "candidate": 0.9777777777777777,
+          "delta": 0.0,
+          "within_tol": true
+        },
+        {
+          "metric": "f1_score",
+          "reference": 0.9771428571428572,
+          "candidate": 0.9794967381174278,
+          "delta": 0.0023538809745705658,
+          "within_tol": true
+        }
+      ],
+      "score_only_accept": true
+    },
+    {
+      "dataset": "wine",
+      "n_samples": 178,
+      "failure_type": "evaluation_on_train",
+      "expected": "METHOD_CHANGED",
+      "actual": "METHOD_CHANGED",
+      "passed": true,
+      "runs": true,
+      "violations": [
+        "RandomForestClassifier (fit #1) is evaluated on rows it was trained on (100% overlap, originally 0%): train/test leakage",
+        "prediction #1 used different evaluation features",
+        "accuracy_score is computed on different test labels than the original",
+        "f1_score is computed on different test labels than the original"
+      ],
+      "evidence_gaps": [],
+      "result_deltas": [
+        {
+          "metric": "accuracy_score",
+          "reference": 0.9777777777777777,
+          "candidate": 1.0,
+          "delta": 0.022222222222222254,
+          "within_tol": false
+        },
+        {
+          "metric": "f1_score",
+          "reference": 0.9771428571428572,
+          "candidate": 1.0,
+          "delta": 0.022857142857142798,
+          "within_tol": false
+        }
+      ],
+      "score_only_accept": true
+    },
+    {
+      "dataset": "wine",
+      "n_samples": 178,
+      "failure_type": "permuted_training_labels",
+      "expected": "METHOD_CHANGED",
+      "actual": "METHOD_CHANGED",
+      "passed": true,
+      "runs": true,
+      "violations": [
+        "RandomForestClassifier (fit #1) training feature/label pairings changed"
+      ],
+      "evidence_gaps": [],
+      "result_deltas": [
+        {
+          "metric": "accuracy_score",
+          "reference": 0.9777777777777777,
+          "candidate": 0.4,
+          "delta": -0.5777777777777777,
+          "within_tol": false
+        },
+        {
+          "metric": "f1_score",
+          "reference": 0.9771428571428572,
+          "candidate": 0.3698549257759784,
+          "delta": -0.6072879313668789,
+          "within_tol": false
+        }
+      ],
+      "score_only_accept": false
+    },
+    {
+      "dataset": "wine",
+      "n_samples": 178,
+      "failure_type": "altered_evaluation_features",
+      "expected": "METHOD_CHANGED",
+      "actual": "METHOD_CHANGED",
+      "passed": true,
+      "runs": true,
+      "violations": [
+        "prediction #1 used different evaluation features"
+      ],
+      "evidence_gaps": [],
+      "result_deltas": [
+        {
+          "metric": "accuracy_score",
+          "reference": 0.9777777777777777,
+          "candidate": 0.9777777777777777,
+          "delta": 0.0,
+          "within_tol": true
+        },
+        {
+          "metric": "f1_score",
+          "reference": 0.9771428571428572,
+          "candidate": 0.9771428571428572,
+          "delta": 0.0,
+          "within_tol": true
+        }
+      ],
+      "score_only_accept": true
+    },
+    {
+      "dataset": "wine",
+      "n_samples": 178,
+      "failure_type": "unlinked_metric",
+      "expected": "METHOD_CHANGED",
+      "actual": "METHOD_CHANGED",
+      "passed": true,
+      "runs": true,
+      "violations": [
+        "prediction operations differ from original experiment",
+        "accuracy_score: metric predictions not linked to a recorded model output",
+        "f1_score: metric predictions not linked to a recorded model output"
+      ],
+      "evidence_gaps": [],
+      "result_deltas": [
+        {
+          "metric": "accuracy_score",
+          "reference": 0.9777777777777777,
+          "candidate": 1.0,
+          "delta": 0.022222222222222254,
+          "within_tol": false
+        },
+        {
+          "metric": "f1_score",
+          "reference": 0.9771428571428572,
+          "candidate": 1.0,
+          "delta": 0.022857142857142798,
+          "within_tol": false
+        }
+      ],
+      "score_only_accept": true
+    }
+  ]
+}

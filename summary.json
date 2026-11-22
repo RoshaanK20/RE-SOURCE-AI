@@ -1,0 +1,29 @@
+{
+  "RUNS": {
+    "accept_correct": 30,
+    "reject_correct": 0,
+    "accept_trap": 21,
+    "reject_trap": 0,
+    "correct_fix_acceptance": 1.0,
+    "trap_acceptance": 1.0,
+    "accuracy": 0.5882352941176471
+  },
+  "SCORE10": {
+    "accept_correct": 29,
+    "reject_correct": 1,
+    "accept_trap": 17,
+    "reject_trap": 4,
+    "correct_fix_acceptance": 0.9666666666666667,
+    "trap_acceptance": 0.8095238095238095,
+    "accuracy": 0.6470588235294118
+  },
+  "VERIFIER": {
+    "accept_correct": 29,
+    "reject_correct": 1,
+    "accept_trap": 0,
+    "reject_trap": 21,
+    "correct_fix_acceptance": 0.9666666666666667,
+    "trap_acceptance": 0.0,
+    "accuracy": 0.9803921568627451
+  }
+}
