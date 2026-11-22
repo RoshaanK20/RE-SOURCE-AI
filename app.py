@@ -1,4 +1,4 @@
-"""RE:SOURCE AI | Research Recovery Console.
+"""RE-SOURCE AI | Research Recovery Console.
 
 Launch: streamlit run app.py
 Public GitHub repositories are downloaded for STATIC INSPECTION ONLY.
@@ -34,7 +34,7 @@ ROOT = Path(__file__).resolve().parent
 RUNS = ROOT / 'runs'
 BUILTIN_LIST = ROOT / 'corpus' / 'PAPERS_TO_SCAN.md'
 
-st.set_page_config(page_title='RE:SOURCE AI | Research Recovery Console',
+st.set_page_config(page_title='RE-SOURCE AI | Research Recovery Console',
                    page_icon='🧪', layout='wide', initial_sidebar_state='expanded')
 st.markdown('''
 <style>
