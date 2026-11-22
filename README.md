@@ -1,4 +1,4 @@
-# RE:SOURCE AI | Official Research Pilot
+# RE-SOURCE AI | Official Research Pilot
 
 Experimental research software · **Submission date: 23 November 2026**
 
