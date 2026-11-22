@@ -2,7 +2,7 @@
 setlocal
 cd /d "%~dp0"
 if not exist ".venv\Scripts\python.exe" (
-  echo Creating RE:SOURCE AI application environment...
+  echo Creating RE-SOURCE AI application environment...
   python -m venv .venv
   if errorlevel 1 goto :error
 )
