@@ -116,7 +116,7 @@ The verdict `PASSED_SPECIFIED_SCIENTIFIC_CHECKS` means **only the supplied evide
 |---|---|---|
 | Syed Muhammad Hassan Zaidi | Supervisor | Department of AI and Mathematical Sciences, Sindh Madressatul Islam University, Karachi, Pakistan |
 | Roshaan Ahmed Khan | Lead developer, researcher | Department of AI and Mathematical Sciences, Sindh Madressatul Islam University, Karachi, Pakistan |
-| Safa | Developer, researcher | Department of AI and Mathematical Sciences, Sindh Madressatul Islam University, Karachi, Pakistan |
+| Safa | Co-Developer, researcher | Department of AI and Mathematical Sciences, Sindh Madressatul Islam University, Karachi, Pakistan |
 
 **Contact:** roshaanahmed2005@gmail.com, safakhan.tech@gmail.com
 
